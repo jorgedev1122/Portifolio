@@ -6,7 +6,7 @@
 }
 body {
 font-family: Arial, sans-serif;
-  background-color: #0f172a;
+  background-color: black;
   background-image: url(./Assets/Background.jpg);
   background-position: center;
   background-repeat: repeat-x;
@@ -30,7 +30,7 @@ header {
 
 header h1 {
   font-size: 50px;
-   color: white !important;
+ 
 }
 
 #theme-toggle {
@@ -107,6 +107,14 @@ body.light #theme-toggle {
 body.light header h1 {
   color: #121212; /* escuro no modo claro */
 }
+
+body.light .nome {
+  color: black; /* texto preto no fundo claro */
+}
+
+
+
+
 
 .box a {
   color: gray;
