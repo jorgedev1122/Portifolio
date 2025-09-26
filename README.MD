@@ -7,7 +7,7 @@ Este repositório foi feito para **mostrar minha evolução** e **compartilhar o
 ---
 
 ## 🌐 Acesse Online
-👉 [Clique aqui para ver o portfólio](https://jorgedev1122.github.io/Portfolio/)  
+👉 [Site - Portifólio](https://jorgedev1122.github.io/Portifolio/)  
 
 ---
 
