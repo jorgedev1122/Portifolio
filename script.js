@@ -26,7 +26,7 @@ const projetos = [
     descricao: `Um site simples para reunir links importantes em um só lugar.  
 <strong>Tecnologias:</strong> HTML + CSS + JS 
 <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.`,
-    imagem: "./FotoLinktree.png",
+    imagem: "Assets/FotoLinktree.png",
     online: "https://jorgedev1122.github.io/My-Linktree/",
     codigo: "https://github.com/jorgedev1122/My-Linktree"
   },
