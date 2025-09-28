@@ -183,3 +183,27 @@ body.light #theme-toggle {
   flex-wrap: wrap; /* permite quebrar linha em telas menores */
   margin-top: 15px;
 }
+
+.navegacao {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.seta {
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.seta:hover {
+  background-color: white;
+  color: #7c3aed;
+  box-shadow: 0 0 12px #7c3aed;
+}
