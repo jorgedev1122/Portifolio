@@ -11,7 +11,7 @@
 <body>
   <!-- HEADER -->
   <header>
-    <h1 id="site-title"><span class="highlight">Jorge Enrique</span> - Portfólio</h1>
+    <h1 id="site-title">Jorge Enrique - Portfólio</h1>
 
     <div class="header-controls">
       <div class="lang-switch">
@@ -74,24 +74,29 @@
     </section>
 
     <!-- CERTIFICADOS -->
-    <section class="box reveal">
-      <h2 id="cert-heading">📜 Certificados</h2>
-      <div class="certificado-container">
-        <img src="./Assets/Certificado.png" alt="Certificado Rocketseat">
-      </div>
+<section class="box reveal">
+  <h2 id="cert-heading">📜 Certificados</h2>
 
-      <div id="certificados-text">
-        <p>
-          O <strong>Curso Discover</strong> da Rocketseat é uma introdução completa e prática ao desenvolvimento web, focada em fundamentos essenciais para a criação de aplicações modernas. Durante o curso, aprendi os conceitos básicos de <strong>HTML, CSS e JavaScript</strong>, além de entender como construir páginas responsivas e interativas.
-        </p>
-        <p>
-          O curso aborda a importância da estruturação semântica com HTML, a estilização eficiente usando CSS, e a lógica de programação e manipulação do DOM com JavaScript. Também aprendi sobre boas práticas de desenvolvimento, organização de código e a utilização de ferramentas que facilitam o fluxo de trabalho.
-        </p>
-        <p>
-          Esse curso foi fundamental para consolidar minha base em front-end, preparando-me para avançar em projetos mais complexos e integrar outras tecnologias no meu processo de aprendizado.
-        </p>
-      </div>
-    </section>
+  <div class="certificado">
+    <h3 id="cert-titulo">Curso Discover</h3>
+    <p id="cert-descricao">
+      O <strong>Curso Discover</strong> da Rocketseat é uma introdução completa e prática ao desenvolvimento web.
+    </p>
+
+    <img id="cert-img" src="./Assets/Certificado.png" alt="Certificado Rocketseat" class="cert-img">
+
+    <div class="botoes">
+      <a id="btn-cert-link" href="https://app.rocketseat.com.br/certificates/63f04b36-f352-422b-bc8c-41be7b914158" target="_blank" class="btn">🔗 Ver Certificado</a>
+    </div>
+
+    <!-- Setas de navegação -->
+    <div class="navegacao">
+      <button id="anterior-cert" class="seta">←</button>
+      <button id="proximo-cert" class="seta">→</button>
+    </div>
+  </div>
+</section>
+
 
     <!-- CONTATO -->
     <section class="box reveal">

@@ -238,3 +238,10 @@ body.light #theme-toggle {
   box-shadow: 0 0 12px #7c3aed;
 }
 
+.cert-img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  margin: 15px 0;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}

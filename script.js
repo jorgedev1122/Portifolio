@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ---------- Tema Dark/Light ----------
   const btn = document.getElementById("theme-toggle");
   const body = document.body;
 
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem("theme", body.classList.contains("light") ? "light" : "dark");
   });
 
-  // ScrollReveal animações
+  // ---------- ScrollReveal ----------
   ScrollReveal().reveal('.reveal', {
     distance: '50px',
     duration: 1000,
@@ -19,11 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     interval: 200
   });
 
-  // ---------- LINGUAS ----------
+  // ---------- Idiomas ----------
   const btnPT = document.getElementById('btn-pt');
   const btnEN = document.getElementById('btn-en');
 
-  // elementos que vamos traduzir
   const elements = {
     siteTitle: document.getElementById('site-title'),
     sobreHeading: document.getElementById('sobre-heading'),
@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     techHeading: document.getElementById('tech-heading'),
     certHeading: document.getElementById('cert-heading'),
     certificadosText: document.getElementById('certificados-text'),
+    certTitulo: document.getElementById('cert-titulo'),
+    certDescricao: document.getElementById('cert-descricao'),
     contactHeading: document.getElementById('contact-heading'),
     contactSub: document.getElementById('contact-sub'),
     contactEmail: document.getElementById('contact-email'),
@@ -44,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const translations = {
     pt: {
-      siteTitle: `<span class="highlight">Jorge Enrique</span> - Portfólio`,
+      siteTitle: `Jorge Enrique - Portiólio`,
       sobreHeading: `👋 Sobre mim`,
       sobreText: `Meu nome é Jorge Enrique, tenho 12 anos e sou um jovem apaixonado por tecnologia. Desde cedo descobri que a programação é uma forma de mudar vidas, e por isso estudo todos os dias programação para aos poucos, me tornar um desenvolvedor cada vez melhor. <br><br> Acredito que começar cedo é o segredo para conquistar liberdade e estabilidade no futuro. Meu objetivo é construir soluções inovadoras, desenvolver projetos que ajudem pessoas e mostrar que dedicação e disciplina podem transformar sonhos em realidade. <br><br> Quando não estou estudando programação, também gosto de aprender sobre investimentos, andar de bicicleta e buscar novas formas de evoluir como pessoa. Estou sempre focado em dar o meu melhor, sem esperar a “hora certa”, porque acredito que o momento certo é aquele em que você começa.`,
       projectsHeading: `💻 Projetos`,
@@ -54,14 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
       btnCodigo: `💻 Código`,
       techHeading: `⚙️ Tecnologias`,
       certHeading: `📜 Certificados`,
-      certificadosText: `<p>O <strong>Curso Discover</strong> da Rocketseat é uma introdução completa e prática ao desenvolvimento web, focada em fundamentos essenciais para a criação de aplicações modernas. Durante o curso, aprendi os conceitos básicos de <strong>HTML, CSS e JavaScript</strong>, além de entender como construir páginas responsivas e interativas.</p><p>O curso aborda a importância da estruturação semântica com HTML, a estilização eficiente usando CSS, e a lógica de programação e manipulação do DOM com JavaScript. Também aprendi sobre boas práticas de desenvolvimento, organização de código e a utilização de ferramentas que facilitam o fluxo de trabalho.</p><p>Esse curso foi fundamental para consolidar minha base em front-end, preparando-me para avançar em projetos mais complexos e integrar outras tecnologias no meu processo de aprendizado.</p>`,
+      certificadosText: `<p>O <strong>Curso Discover</strong> da Rocketseat é uma introdução completa e prática ao desenvolvimento web, focada em fundamentos essenciais para a criação de aplicações modernas. Durante o curso, aprendi os conceitos básicos de <strong>HTML, CSS e JavaScript</strong>, além de entender como construir páginas responsivas e interativas.</p>`,
+      certTitulo: `Curso Discover`,
+      certDescricao: `O Curso Discover da Rocketseat é uma introdução prática ao desenvolvimento web, aprendendo HTML, CSS e JS.`,
       contactHeading: `Contato`,
+      certVerCertificado: `🔗 Ver Certificado`,
       contactSub: `🢃 Entre em Contato comigo por email 🢃`,
       contactEmail: `jorgeenriqueantunes@gmail.com`,
       footerText: `© 2025 - Jorge Enrique`
     },
     en: {
-      siteTitle: `<span class="highlight">Jorge Enrique</span> - Portfolio`,
+      siteTitle: `Jorge Enrique - Portfolio`,
       sobreHeading: `👋 About me`,
       sobreText: `My name is Jorge Enrique, I'm 12 years old and I'm passionate about technology. I've been studying programming every day to become a better developer and build solutions that help people. <br><br>I believe starting early is the key to financial freedom and stability in the future. My goal is to create innovative projects, improve continuously and show that dedication and discipline can turn dreams into reality. <br><br>When I'm not coding, I like learning about investments, riding my bike, and finding ways to grow as a person. I'm always focused on giving my best — the right time to start is now.`,
       projectsHeading: `💻 Projects`,
@@ -71,8 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
       btnCodigo: `💻 Code`,
       techHeading: `⚙️ Technologies`,
       certHeading: `📜 Certificates`,
-      certificadosText: `<p>The <strong>Discover course</strong> from Rocketseat is a practical introduction to web development, focused on key fundamentals for building modern applications. During the course I learned the basics of <strong>HTML, CSS and JavaScript</strong>, besides how to build responsive and interactive pages.</p><p>The course covers semantic HTML structure, efficient styling with CSS, and programming logic and DOM manipulation with JavaScript. I also learned best practices, code organization, and tools that improve the workflow.</p><p>This course was essential to consolidate my front-end foundation and prepare me to tackle more complex projects and integrate other technologies into my learning path.</p>`,
+      certificadosText: `<p>The <strong>Discover course</strong> from Rocketseat is a practical introduction to web development, focused on key fundamentals for building modern applications.</p>`,
+      certTitulo: `Discover Course`,
+      certDescricao: `The Discover Course from Rocketseat is a hands-on introduction to web development, learning HTML, CSS and JS.`,
       contactHeading: `Contact`,
+      certVerCertificado: `🔗 View the certificate`,
       contactSub: `🢃 Get in touch via email 🢃`,
       contactEmail: `jorgeenriqueantunes@gmail.com`,
       footerText: `© 2025 - Jorge Enrique`
@@ -80,42 +88,30 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function setLangUI(lang) {
-    // set aria-pressed
     btnPT.setAttribute('aria-pressed', lang === 'pt');
     btnEN.setAttribute('aria-pressed', lang === 'en');
 
-    // update elements (use innerHTML where markup exists)
-    elements.siteTitle.innerHTML = translations[lang].siteTitle;
-    elements.sobreHeading.textContent = translations[lang].sobreHeading;
-    elements.sobreText.innerHTML = translations[lang].sobreText;
-    elements.projectsHeading.textContent = translations[lang].projectsHeading;
-    elements.projetoTitulo.innerHTML = translations[lang].projetoTitulo;
-    elements.projetoDescricao.innerHTML = translations[lang].projetoDescricao;
-    elements.btnOnline.textContent = translations[lang].btnOnline;
-    elements.btnCodigo.textContent = translations[lang].btnCodigo;
-    elements.techHeading.textContent = translations[lang].techHeading;
-    elements.certHeading.textContent = translations[lang].certHeading;
-    elements.certificadosText.innerHTML = translations[lang].certificadosText;
-    elements.contactHeading.textContent = translations[lang].contactHeading;
-    elements.contactSub.textContent = translations[lang].contactSub;
-    elements.contactEmail.textContent = translations[lang].contactEmail;
-    elements.footerText.textContent = translations[lang].footerText;
+    for (const key in elements) {
+      if (elements[key]) {
+        if (['sobreText','projetoDescricao','certificadosText','certDescricao'].includes(key)) {
+          elements[key].innerHTML = translations[lang][key];
+        } else {
+          elements[key].textContent = translations[lang][key];
+        }
+      }
+    }
 
-    // save preference
     localStorage.setItem('site-lang', lang);
-    // update html lang attribute for accessibility / SEO (keeps pt-br by default)
     document.documentElement.lang = (lang === 'en') ? 'en' : 'pt-br';
   }
 
-  // eventos dos botões
   btnPT.addEventListener('click', () => setLangUI('pt'));
   btnEN.addEventListener('click', () => setLangUI('en'));
 
-  // load saved or default
   const savedLang = localStorage.getItem('site-lang') || 'pt';
   setLangUI(savedLang);
 
-  // ---------- Projetos dinamicos (mantive a tua lógica) ----------
+  // ---------- Projetos Dinâmicos ----------
   const projetos = [
     {
       titulo_pt: "🌐 Linktree",
@@ -134,8 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
       imagem: "Assets/FotoCalcMod.png",
       online: "https://jorgedev1122.github.io/CalcMod/",
       codigo: "https://github.com/jorgedev1122/CalcMod"
-    },
-    // add more if needed
+    }
   ];
 
   let projetoAtual = 0;
@@ -166,11 +161,58 @@ document.addEventListener('DOMContentLoaded', () => {
     btnCodigo2.href = p.codigo;
   }
 
-  // atualiza quando trocar idioma também (pra projetos)
   const observer = new MutationObserver(() => atualizarProjeto());
   observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
-
-  // initialize project display
   atualizarProjeto();
+
+  // ---------- Certificados Dinâmicos ----------
+  const certificados = [
+    {
+      titulo_pt: "Curso Discover",
+      titulo_en: "Discover Course",
+      descricao_pt: "O Curso Discover da Rocketseat é uma introdução prática ao desenvolvimento web, aprendendo HTML, CSS e JS.",
+      descricao_en: "The Discover Course from Rocketseat is a hands-on introduction to web development, learning HTML, CSS and JS.",
+      imagem: "Assets/Certificado.png",
+      link: "https://app.rocketseat.com.br/certificates/63f04b36-f352-422b-bc8c-41be7b914158"
+    },
+    {
+      titulo_pt: "Posicionamento nas Redes Sociais",
+      titulo_en: "Social Media Positioning",
+      descricao_pt: "Curso gratuito da Rocketseat sobre branding pessoal e posicionamento online para atrair oportunidades na área de tecnologia.",
+      descricao_en: "Free Rocketseat course on personal branding and online positioning to attract tech opportunities.",
+      imagem: "Assets/Certificado2.png",
+      link: "https://app.rocketseat.com.br/certificates/e20b1bfe-1156-4170-979e-275e43f82357"
+    }
+  ];
+
+  let certificadoAtual = 0;
+
+  const certTitulo = document.getElementById("cert-titulo");
+  const certDescricao = document.getElementById("cert-descricao");
+  const certImg = document.getElementById("cert-img");
+  const btnCertLink = document.getElementById("btn-cert-link");
+
+  document.getElementById("proximo-cert").addEventListener("click", () => {
+    certificadoAtual = (certificadoAtual + 1) % certificados.length;
+    atualizarCertificado();
+  });
+
+  document.getElementById("anterior-cert").addEventListener("click", () => {
+    certificadoAtual = (certificadoAtual - 1 + certificados.length) % certificados.length;
+    atualizarCertificado();
+  });
+
+  function atualizarCertificado() {
+    const c = certificados[certificadoAtual];
+    const currentLang = localStorage.getItem('site-lang') || 'pt';
+    certTitulo.innerHTML = (currentLang === 'pt') ? c.titulo_pt : c.titulo_en;
+    certDescricao.innerHTML = (currentLang === 'pt') ? c.descricao_pt : c.descricao_en;
+    certImg.src = c.imagem;
+    btnCertLink.href = c.link;
+  }
+
+  const observerCert = new MutationObserver(() => atualizarCertificado());
+  observerCert.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  atualizarCertificado();
 });
 
