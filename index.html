@@ -11,15 +11,23 @@
 <body>
   <!-- HEADER -->
   <header>
-    <h1><span class="highlight">Jorge Enrique</span> - Portfólio</h1>
-    <button id="theme-toggle"><ion-icon name="moon-outline"></ion-icon></button>
+    <h1 id="site-title"><span class="highlight">Jorge Enrique</span> - Portfólio</h1>
+
+    <div class="header-controls">
+      <div class="lang-switch">
+        <button id="btn-pt" aria-pressed="true" class="lang-btn">PT</button>
+        <button id="btn-en" aria-pressed="false" class="lang-btn">EN</button>
+      </div>
+
+      <button id="theme-toggle"><ion-icon name="moon-outline"></ion-icon></button>
+    </div>
   </header>
 
   <main>
     <!-- SOBRE MIM -->
     <section class="box reveal">
-      <h2>👋 Sobre mim</h2>
-      <p>
+      <h2 id="sobre-heading">👋 Sobre mim</h2>
+      <p id="sobre-text">
         Meu nome é Jorge Enrique, tenho 12 anos e sou um jovem apaixonado por tecnologia. Desde cedo descobri que a programação é uma forma de mudar vidas, e por isso estudo todos os dias programação para aos poucos, me tornar um desenvolvedor cada vez melhor. <br><br> Acredito que começar cedo é o segredo para conquistar liberdade e estabilidade no futuro. Meu objetivo é construir soluções inovadoras, desenvolver projetos que ajudem pessoas e mostrar que dedicação e disciplina podem transformar sonhos em realidade. <br><br> Quando não estou estudando programação, também gosto de aprender sobre investimentos, andar de bicicleta e buscar novas formas de evoluir como pessoa. Estou sempre focado em dar o meu melhor, sem esperar a “hora certa”, porque acredito que o momento certo é aquele em que você começa.
       </p>
       <div class="social">
@@ -31,33 +39,33 @@
 
     <!-- PROJETOS -->
     <section class="box reveal">
-      <h2>💻 Projetos</h2>
+      <h2 id="projects-heading">💻 Projetos</h2>
       <div class="projeto">
-  <h3 id="projeto-titulo">🌐 Linktree</h3>
-  <p id="projeto-descricao">
-    Um site simples para reunir links importantes em um só lugar.  
-    <br><strong>Tecnologias:</strong> HTML + CSS + JS 
-    <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.
-  </p>
+        <h3 id="projeto-titulo">🌐 Linktree</h3>
+        <p id="projeto-descricao">
+          Um site simples para reunir links importantes em um só lugar.  
+          <br><strong>Tecnologias:</strong> HTML + CSS + JS 
+          <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.
+        </p>
 
-  <img id="projeto-img" src="./Assets/FotoLinktree.png" alt="Preview do projeto" class="projeto-img">
+        <img id="projeto-img" src="./Assets/FotoLinktree.png" alt="Preview do projeto" class="projeto-img">
 
-  <div class="botoes">
-    <a id="btn-online" href="https://jorgedev1122.github.io/My-Linktree/" target="_blank" class="btn">🔗 Ver Online</a>
-    <a id="btn-codigo" href="https://github.com/jorgedev1122/My-Linktree" target="_blank" class="btn">💻 Código</a>
-  </div>
+        <div class="botoes">
+          <a id="btn-online" href="https://jorgedev1122.github.io/My-Linktree/" target="_blank" class="btn">🔗 Ver Online</a>
+          <a id="btn-codigo" href="https://github.com/jorgedev1122/My-Linktree" target="_blank" class="btn">💻 Código</a>
+        </div>
 
-  <!-- Setas de navegação -->
-  <div class="navegacao">
-    <button id="anterior" class="seta">←</button>
-    <button id="proximo" class="seta">→</button>
-  </div>
-</div>
+        <!-- Setas de navegação -->
+        <div class="navegacao">
+          <button id="anterior" class="seta">←</button>
+          <button id="proximo" class="seta">→</button>
+        </div>
+      </div>
     </section>
 
     <!-- TECNOLOGIAS -->
     <section class="box reveal">
-      <h2>⚙️ Tecnologias</h2>
+      <h2 id="tech-heading">⚙️ Tecnologias</h2>
       <div class="tech-icons">
         <ion-icon class="tech-icon" name="logo-html5"></ion-icon>
         <ion-icon class="tech-icon" name="logo-css3"></ion-icon>
@@ -67,23 +75,34 @@
 
     <!-- CERTIFICADOS -->
     <section class="box reveal">
-      <h2>📜 Certificados</h2>
+      <h2 id="cert-heading">📜 Certificados</h2>
       <div class="certificado-container">
         <img src="./Assets/Certificado.png" alt="Certificado Rocketseat">
       </div>
-O <strong>Curso Discover</strong> da Rocketseat é uma introdução completa e prática ao desenvolvimento web, focada em fundamentos essenciais para a criação de aplicações modernas. Durante o curso, aprendi os conceitos básicos de <strong>HTML, CSS e JavaScript</strong>, além de entender como construir páginas responsivas e interativas. </p> <p> O curso aborda a importância da estruturação semântica com HTML, a estilização eficiente usando CSS, e a lógica de programação e manipulação do DOM com JavaScript. Também aprendi sobre boas práticas de desenvolvimento, organização de código e a utilização de ferramentas que facilitam o fluxo de trabalho. </p> <p> Esse curso foi fundamental para consolidar minha base em front-end, preparando-me para avançar em projetos mais complexos e integrar outras tecnologias no meu processo de aprendizado. </p>
+
+      <div id="certificados-text">
+        <p>
+          O <strong>Curso Discover</strong> da Rocketseat é uma introdução completa e prática ao desenvolvimento web, focada em fundamentos essenciais para a criação de aplicações modernas. Durante o curso, aprendi os conceitos básicos de <strong>HTML, CSS e JavaScript</strong>, além de entender como construir páginas responsivas e interativas.
+        </p>
+        <p>
+          O curso aborda a importância da estruturação semântica com HTML, a estilização eficiente usando CSS, e a lógica de programação e manipulação do DOM com JavaScript. Também aprendi sobre boas práticas de desenvolvimento, organização de código e a utilização de ferramentas que facilitam o fluxo de trabalho.
+        </p>
+        <p>
+          Esse curso foi fundamental para consolidar minha base em front-end, preparando-me para avançar em projetos mais complexos e integrar outras tecnologias no meu processo de aprendizado.
+        </p>
+      </div>
     </section>
 
     <!-- CONTATO -->
     <section class="box reveal">
-      <h2>Contato</h2>
-      <p>🢃 Entre em Contato comigo por email 🢃</p>
-      <p class="email">jorgeenriqueantunes@gmail.com</p>
+      <h2 id="contact-heading">Contato</h2>
+      <p id="contact-sub">🢃 Entre em Contato comigo por email 🢃</p>
+      <p class="email" id="contact-email">jorgeenriqueantunes@gmail.com</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 - Jorge Enrique</p>
+    <p id="footer-text">&copy; 2025 - Jorge Enrique</p>
   </footer>
 
   <script src="script.js"></script>

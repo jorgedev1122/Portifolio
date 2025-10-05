@@ -25,6 +25,13 @@ header {
   margin-bottom: 30px;
 }
 
+/* header controls wrapper */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 header h1 {
   font-size: 42px;
   font-weight: bold;
@@ -39,6 +46,29 @@ header h1 {
   border: none;
   font-size: 26px;
   cursor: pointer;
+  color: white;
+}
+
+/* language buttons */
+.lang-switch {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-btn {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.12s;
+}
+
+.lang-btn[aria-pressed="true"] {
+  background: #7c3aed;
+  box-shadow: 0 8px 24px rgba(124,58,237,0.3);
   color: white;
 }
 
@@ -207,3 +237,4 @@ body.light #theme-toggle {
   color: #7c3aed;
   box-shadow: 0 0 12px #7c3aed;
 }
+
