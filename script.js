@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const translations = {
     pt: {
-      siteTitle: `Jorge Enrique - Portiólio`,
+      siteTitle: `Jorge Enrique - Portifólio`,
       sobreHeading: `👋 Sobre mim`,
       sobreText: `Meu nome é Jorge Enrique, tenho 12 anos e sou um jovem apaixonado por tecnologia. Desde cedo descobri que a programação é uma forma de mudar vidas, e por isso estudo todos os dias programação para aos poucos, me tornar um desenvolvedor cada vez melhor. <br><br> Acredito que começar cedo é o segredo para conquistar liberdade e estabilidade no futuro. Meu objetivo é construir soluções inovadoras, desenvolver projetos que ajudem pessoas e mostrar que dedicação e disciplina podem transformar sonhos em realidade. <br><br> Quando não estou estudando programação, também gosto de aprender sobre investimentos, andar de bicicleta e buscar novas formas de evoluir como pessoa. Estou sempre focado em dar o meu melhor, sem esperar a “hora certa”, porque acredito que o momento certo é aquele em que você começa.`,
       projectsHeading: `💻 Projetos`,
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       footerText: `© 2025 - Jorge Enrique`
     },
     en: {
-      siteTitle: `Jorge Enrique - Portfolio`,
+      siteTitle: `Jorge Enrique - Portifolio`,
       sobreHeading: `👋 About me`,
       sobreText: `My name is Jorge Enrique, I'm 12 years old and I'm passionate about technology. I've been studying programming every day to become a better developer and build solutions that help people. <br><br>I believe starting early is the key to financial freedom and stability in the future. My goal is to create innovative projects, improve continuously and show that dedication and discipline can turn dreams into reality. <br><br>When I'm not coding, I like learning about investments, riding my bike, and finding ways to grow as a person. I'm always focused on giving my best — the right time to start is now.`,
       projectsHeading: `💻 Projects`,
