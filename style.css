@@ -141,7 +141,7 @@ header h1 {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin: 20px 0;
+  flex-wrap: wrap;
 }
 
 .tech-icon {

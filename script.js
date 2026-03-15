@@ -48,7 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
     pt: {
       siteTitle: `Jorge Enrique - Portifólio`,
       sobreHeading: `👋 Sobre mim`,
-      sobreText: `Meu nome é Jorge Enrique, tenho 12 anos e sou um jovem apaixonado por tecnologia. Desde cedo descobri que a programação é uma forma de mudar vidas, e por isso estudo todos os dias programação para aos poucos, me tornar um desenvolvedor cada vez melhor. <br><br> Acredito que começar cedo é o segredo para conquistar liberdade e estabilidade no futuro. Meu objetivo é construir soluções inovadoras, desenvolver projetos que ajudem pessoas e mostrar que dedicação e disciplina podem transformar sonhos em realidade. <br><br> Quando não estou estudando programação, também gosto de aprender sobre investimentos, andar de bicicleta e buscar novas formas de evoluir como pessoa. Estou sempre focado em dar o meu melhor, sem esperar a “hora certa”, porque acredito que o momento certo é aquele em que você começa.`,
+      sobreText: `Sou Jorge Enrique, desenvolvedor iniciante apaixonado por tecnologia.
+
+Comecei a estudar programação cedo e atualmente desenvolvo projetos em
+HTML, CSS, JavaScript e Python para aprimorar minhas habilidades.
+
+Meu objetivo é evoluir constantemente como desenvolvedor e construir
+soluções que impactem pessoas de forma positiva.`,
       projectsHeading: `💻 Projetos`,
       projetoTitulo: `🌐 Linktree`,
       projetoDescricao: `Um site simples para reunir links importantes em um só lugar.  <br><strong>Tecnologias:</strong> HTML + CSS + JS <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.`,
@@ -68,7 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
     en: {
       siteTitle: `Jorge Enrique - Portifolio`,
       sobreHeading: `👋 About me`,
-      sobreText: `My name is Jorge Enrique, I'm 12 years old and I'm passionate about technology. I've been studying programming every day to become a better developer and build solutions that help people. <br><br>I believe starting early is the key to financial freedom and stability in the future. My goal is to create innovative projects, improve continuously and show that dedication and discipline can turn dreams into reality. <br><br>When I'm not coding, I like learning about investments, riding my bike, and finding ways to grow as a person. I'm always focused on giving my best — the right time to start is now.`,
+      sobreText: `I'm Jorge Enrique, a beginner developer passionate about technology.
+
+I started studying programming early and currently develop projects in HTML, CSS, JavaScript, and Python to improve my skills.
+
+My goal is to constantly evolve as a developer and build solutions that positively impact people.`,
       projectsHeading: `💻 Projects`,
       projetoTitulo: `🌐 Linktree`,
       projetoDescricao: `A simple site to gather important links in one place.  <br><strong>Technologies:</strong> HTML + CSS + JS <br><em>Learned:</em> responsive design and CSS organization.`,
@@ -130,7 +140,15 @@ document.addEventListener('DOMContentLoaded', () => {
       imagem: "Assets/FotoCalcMod.png",
       online: "https://jorgedev1122.github.io/CalcMod/",
       codigo: "https://github.com/jorgedev1122/CalcMod"
-    }
+    },
+    {titulo_pt: "📝 Roadmap",
+      descricao_pt: `Um roadmap para organizar seu aprendizado em programação.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> planejamento e organização.`,
+      titulo_en: "📝 Roadmap",
+      descricao_en: `A roadmap to organize your learning in programming.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> planning and organization.`,
+      imagem: "Assets/FotoRoadmap.png",
+      online: "https://jorgedev1122.github.io/Roadmap-Fullstack/",
+      codigo: "https://github.com/jorgedev1122/Roadmap-Fullstack"}
+     
   ];
 
   let projetoAtual = 0;
