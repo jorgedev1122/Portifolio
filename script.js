@@ -147,9 +147,19 @@ My goal is to constantly evolve as a developer and build solutions that positive
       descricao_en: `A roadmap to organize your learning in programming.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> planning and organization.`,
       imagem: "Assets/FotoRoadmap.png",
       online: "https://jorgedev1122.github.io/Roadmap-Fullstack/",
-      codigo: "https://github.com/jorgedev1122/Roadmap-Fullstack"}
-     
-  ];
+      codigo: "https://github.com/jorgedev1122/Roadmap-Fullstack"
+    },  
+    {titulo_pt: "🎓 EduSpace",
+      descricao_pt: `Um espaço que une recursos, tarefas, mensagens e mais para organizar seu aprendizado na escola.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> organização de paineis.`,
+      titulo_en: "🎓 EduSpace",
+      descricao_en: `A space that brings together resources, tasks, messages and more to organize your learning at school.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> panel organization.`,
+      imagem: "Assets/FotoEduSpace.png",
+      online: "https://jorgedev1122.github.io/EduSpace/",
+      codigo: "https://github.com/jorgedev1122/EduSpace"
+    }
+  ]; 
+  
+  
 
   let projetoAtual = 0;
 
