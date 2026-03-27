@@ -128,7 +128,7 @@ My goal is to constantly evolve as a developer and build solutions that positive
       descricao_pt: `Um site simples para reunir links importantes em um só lugar.  <br><strong>Tecnologias:</strong> HTML + CSS + JS <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.`,
       titulo_en: "🌐 Linktree",
       descricao_en: `A simple site to gather important links in one place.  <br><strong>Technologies:</strong> HTML + CSS + JS <br><em>Learned:</em> responsive design and CSS organization.`,
-      imagem: "Assets/FotoLinktree.png",
+      imagem: "Assets/FotoLinktree2.png",
       online: "https://jorgedev1122.github.io/My-Linktree/",
       codigo: "https://github.com/jorgedev1122/My-Linktree"
     },

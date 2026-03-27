@@ -54,7 +54,7 @@ soluções que impactem pessoas de forma positiva.
           <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.
         </p>
 
-        <img id="projeto-img" src="./Assets/FotoLinktree.png" alt="Preview do projeto" class="projeto-img">
+        <img id="projeto-img" src="./Assets/FotoLinktree2.png" alt="Preview do projeto" class="projeto-img">
 
         <div class="botoes">
           <a id="btn-online" href="https://jorgedev1122.github.io/My-Linktree/" target="_blank" class="btn">🔗 Ver Online</a>
@@ -79,7 +79,6 @@ soluções que impactem pessoas de forma positiva.
 <ion-icon class="tech-icon python" name="logo-python"></ion-icon>
       </div>
     </section>
-</div>
 
     <!-- CERTIFICADOS -->
 <section class="box reveal">
@@ -107,11 +106,17 @@ soluções que impactem pessoas de forma positiva.
 
 
 <section class="box reveal">
-<img src="https://github-readme-stats.vercel.app/api?username=jorgedev1122&show_icons=true&theme=tokyonight">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jorgedev1122&layout=compact&theme=tokyonight">
+  <h2>📊 GitHub Status</h2>
+  <img id="gh-stats" src="https://github-readme-stats.vercel.app/api?username=jorgedev1122&show_icons=true&theme=tokyonight" alt="GitHub Readme Stats" onerror="this.style.display='none'; showGithubFallback();">
+  <img id="gh-toplangs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jorgedev1122&layout=compact&theme=tokyonight" alt="GitHub Top Languages" onerror="this.style.display='none'; showGithubFallback();">
+  <p id="gh-fallback" style="display:none; color:#ccc; margin-top:12px;">GitHub Stats temporariamente indisponível. Tente atualizar em alguns minutos ou confira meu perfil no GitHub diretamente.</p>
 </section>
 
+<script>
+  function showGithubFallback() {
+    document.getElementById('gh-fallback').style.display = 'block';
+  }
+</script>
 
 
     <!-- CONTATO -->
