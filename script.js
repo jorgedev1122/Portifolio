@@ -20,6 +20,22 @@ document.addEventListener('DOMContentLoaded', () => {
     interval: 200
   });
 
+  // ---------- GitHub Status Fallback ----------
+  window.showGithubFallback = function() {
+    const currentLang = localStorage.getItem('site-lang') || 'pt';
+    const fallbackPT = document.getElementById('gh-fallback-pt');
+    const fallbackEN = document.getElementById('gh-fallback-en');
+    
+    if (fallbackPT) fallbackPT.style.display = 'none';
+    if (fallbackEN) fallbackEN.style.display = 'none';
+    
+    if (currentLang === 'pt' && fallbackPT) {
+      fallbackPT.style.display = 'block';
+    } else if (currentLang === 'en' && fallbackEN) {
+      fallbackEN.style.display = 'block';
+    }
+  };
+
   // ---------- Idiomas ----------
   const btnPT = document.getElementById('btn-pt');
   const btnEN = document.getElementById('btn-en');
@@ -67,6 +83,7 @@ soluções que impactem pessoas de forma positiva.`,
       certDescricao: `O Curso Discover da Rocketseat é uma introdução prática ao desenvolvimento web, aprendendo HTML, CSS e JS.`,
       contactHeading: `Contato`,
       certVerCertificado: `🔗 Ver Certificado`,
+      github: `🔗 My GitHub`,
       contactSub: `🢃 Entre em Contato comigo por email 🢃`,
       contactEmail: `jorgeenriqueantunes@gmail.com`,
       footerText: `© 2025 - Jorge Enrique`
@@ -91,6 +108,7 @@ My goal is to constantly evolve as a developer and build solutions that positive
       certDescricao: `The Discover Course from Rocketseat is a hands-on introduction to web development, learning HTML, CSS and JS.`,
       contactHeading: `Contact`,
       certVerCertificado: `🔗 View the certificate`,
+      github: `🔗 My GitHub`,
       contactSub: `🢃 Get in touch via email 🢃`,
       contactEmail: `jorgeenriqueantunes@gmail.com`,
       footerText: `© 2025 - Jorge Enrique`
@@ -113,6 +131,9 @@ My goal is to constantly evolve as a developer and build solutions that positive
 
     localStorage.setItem('site-lang', lang);
     document.documentElement.lang = (lang === 'en') ? 'en' : 'pt-br';
+    
+    // Atualizar mensagem de fallback do GitHub
+    window.showGithubFallback();
   }
 
   btnPT.addEventListener('click', () => setLangUI('pt'));
@@ -156,7 +177,15 @@ My goal is to constantly evolve as a developer and build solutions that positive
       imagem: "Assets/FotoEduspace.png",
       online: "https://jorgedev1122.github.io/Eduspace/",
       codigo: "https://github.com/jorgedev1122/EduSpace"
-    }
+    },
+    {titulo_pt: "📁 Pasta de Exercícios - Python",
+      descricao_pt: `Uma pasta organizada com alguns códigos em Python que fiz enquanto fazia um curso de Python, exercícios para debugar, utilizar variáveis de forma prática, identificar erros, etc.`,
+      titulo_en: "📁 Exercise Folder - Python",
+      descricao_en: `An organized folder with some Python code I wrote while taking a Python course, exercises for debugging, using variables in a practical way, and identifying errors, etc.`,
+      imagem: "Assets/Fotolpp.png",
+      online: "https://jorgedev1122.github.io/L-gicaDePrograma-o---Testes/",
+      codigo: "https://github.com/jorgedev1122/L-gicaDePrograma-o---Testes"
+    },
   ]; 
   
   

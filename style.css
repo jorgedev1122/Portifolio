@@ -191,6 +191,18 @@ body.light #theme-toggle {
   color: #121212;
 }
 
+/* GitHub Fallback Messages */
+#gh-fallback-pt,
+#gh-fallback-en {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+body.light #gh-fallback-pt,
+body.light #gh-fallback-en {
+  color: #121212;
+}
+
 /* Centralizar conteúdo da seção Projetos */
 .projeto {
   text-align: center; /* centraliza títulos, textos e imagens */
