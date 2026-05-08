@@ -182,9 +182,17 @@ My goal is to constantly evolve as a developer and build solutions that positive
       descricao_pt: `Uma landing page para uma academia de boxe fictícia chamada IronFist, com um design moderno e responsivo.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> design moderno e responsivo.`,
       titulo_en: "🥊 Boxing Gym Landing Page - IronFist",
       descricao_en: `A landing page for a fictional boxing gym called IronFist, with a modern and responsive design.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> modern and responsive design.`,
-      imagem: "Assets/FotoIronfist.png",
+      imagem: "Assets/FotoBoxe.png",
       online: "https://jorgedev1122.github.io/Iron-Fist/",
       codigo: "https://github.com/jorgedev1122/Iron-Fist"
+    },
+    {titulo_pt: '🚴 Landing page de ciclismo - Velocity Dash',
+      descricao_pt: `Uma landing page para uma loja de ciclismo fictícia chamada Velocity Dash, com um design moderno e responsivo.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> design moderno e responsivo.`,
+      titulo_en: '🚴 Cycling Landing Page - Velocity Dash',
+      descricao_en: `A landing page for a fictional cycling shop called Velocity Dash, with a modern and responsive design.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> modern and responsive design.`,
+      imagem: "Assets/FotoVelocity.png",
+      online: "https://jorgedev1122.github.io/Velocity-Dash/",
+      codigo: "https://github.com/jorgedev1122/Velocity-Dash"
     }
   ]; 
   
