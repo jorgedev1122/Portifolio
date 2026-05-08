@@ -178,14 +178,14 @@ My goal is to constantly evolve as a developer and build solutions that positive
       online: "https://jorgedev1122.github.io/Eduspace/",
       codigo: "https://github.com/jorgedev1122/EduSpace"
     },
-    {titulo_pt: "📁 Pasta de Exercícios - Python",
-      descricao_pt: `Uma pasta organizada com alguns códigos em Python que fiz enquanto fazia um curso de Python, exercícios para debugar, utilizar variáveis de forma prática, identificar erros, etc.`,
-      titulo_en: "📁 Exercise Folder - Python",
-      descricao_en: `An organized folder with some Python code I wrote while taking a Python course, exercises for debugging, using variables in a practical way, and identifying errors, etc.`,
-      imagem: "Assets/Fotolpp.png",
-      online: "https://jorgedev1122.github.io/L-gicaDePrograma-o---Testes/",
-      codigo: "https://github.com/jorgedev1122/L-gicaDePrograma-o---Testes"
-    },
+    {titulo_pt: "🥊 Landing page de academia de Boxe - IronFist",
+      descricao_pt: `Uma landing page para uma academia de boxe fictícia chamada IronFist, com um design moderno e responsivo.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> design moderno e responsivo.`,
+      titulo_en: "🥊 Boxing Gym Landing Page - IronFist",
+      descricao_en: `A landing page for a fictional boxing gym called IronFist, with a modern and responsive design.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> modern and responsive design.`,
+      imagem: "Assets/FotoIronfist.png",
+      online: "https://jorgedev1122.github.io/Iron-Fist/",
+      codigo: "https://github.com/jorgedev1122/Iron-Fist"
+    }
   ]; 
   
   
@@ -225,7 +225,7 @@ My goal is to constantly evolve as a developer and build solutions that positive
   // ---------- Certificados Dinâmicos ----------
   const certificados = [
     {
-      titulo_pt: "Curso Discover",
+      titulo_pt: "Discover",
       titulo_en: "Discover Course",
       descricao_pt: "O Curso Discover da Rocketseat é uma introdução prática ao desenvolvimento web, aprendendo HTML, CSS e JS.",
       descricao_en: "The Discover Course from Rocketseat is a hands-on introduction to web development, learning HTML, CSS and JS.",
@@ -239,7 +239,15 @@ My goal is to constantly evolve as a developer and build solutions that positive
       descricao_en: "Free Rocketseat course on personal branding and online positioning to attract tech opportunities.",
       imagem: "Assets/Certificado2.png",
       link: "https://app.rocketseat.com.br/certificates/e20b1bfe-1156-4170-979e-275e43f82357"
-    }
+    },
+    {
+      titulo_pt: "Desbloqueando a Programação",
+      titulo_en: "Unlocking Programming",
+      descricao_pt: "Curso gratuito para iniciantes que apresenta operadores, váriaveis, estrutura de dados, loops e mais utilizando o Scratch (plataforma de programação visual utilizando blocos).",
+      descricao_en: "Free beginner course that introduces operators, variables, data structures, loops and more using Scratch (a visual programming platform using blocks).",
+      imagem: "Assets/Certificado3.png",
+      link: "https://app.rocketseat.com.br/certificates/ab86655c-05aa-46fa-881b-30ed56e9c31c"
+    },
   ];
 
   let certificadoAtual = 0;
