@@ -186,13 +186,21 @@ My goal is to constantly evolve as a developer and build solutions that positive
       online: "https://jorgedev1122.github.io/Iron-Fist/",
       codigo: "https://github.com/jorgedev1122/Iron-Fist"
     },
-    {titulo_pt: '🚴 Landing page de ciclismo - Velocity Dash',
-      descricao_pt: `Uma landing page para uma loja de ciclismo fictícia chamada Velocity Dash, com um design moderno e responsivo.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> design moderno e responsivo.`,
-      titulo_en: '🚴 Cycling Landing Page - Velocity Dash',
-      descricao_en: `A landing page for a fictional cycling shop called Velocity Dash, with a modern and responsive design.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> modern and responsive design.`,
+    {titulo_pt: '🚴 Dashboard para ciclistas - Velocity Dash',
+      descricao_pt: `Um dashboard para ciclistas, com informações sobre rotas, desempenho e mais.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> design moderno e responsivo.`,
+      titulo_en: '🚴 Cycling Dashboard - Velocity Dash',
+      descricao_en: `A dashboard for cyclists, with information about routes, performance and more.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> modern and responsive design.`,
       imagem: "Assets/FotoVelocity.png",
       online: "https://jorgedev1122.github.io/Velocity-Dash/",
       codigo: "https://github.com/jorgedev1122/Velocity-Dash"
+    },
+    {titulo_pt: '🛹 Loja skatista - SK8HUB',
+      descricao_pt: 'loja online para público skatista, roupas, acessórios, peças e design ciano moderno.',
+      titulo_en: '🛹 Skater Store - SK8HUB',
+      descricao_en: 'Online store for skaters, with clothes, accessories, parts and modern cyan design.',
+      imagem: "Assets/FotoSK8HUB.png",
+      online: "https://jorgedev1122.github.io/SK8HUB/",
+      codigo: "https://github.com/jorgedev1122/SK8HUB"
     }
   ]; 
   
