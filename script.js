@@ -201,6 +201,14 @@ My goal is to constantly evolve as a developer and build solutions that positive
       imagem: "Assets/FotoSK8HUB.png",
       online: "https://jorgedev1122.github.io/SK8HUB/",
       codigo: "https://github.com/jorgedev1122/SK8HUB"
+    },
+    {titulo_pt: '🚚 Landing page premium (REAL) - DB-imports',
+      descricao_pt: 'Projeto de vitrine digital feita para a empresa de importação DB-imports, com design moderno e responsivo.',
+      titulo_en: '🚚 Premium Landing Page (REAL) - DB-imports',
+      descricao_en: 'Digital showcase project made for the import company DB-imports, with a modern and responsive design.',
+      imagem: "Assets/FotoDB.png",
+      online: "https://db-imports.vercel.app/",
+      codigo: "https://github.com/jorgedev1122/DB-Imports"
     }
   ]; 
   

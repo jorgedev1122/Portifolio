@@ -1,3 +1,10 @@
+:root{
+ --bg: #0a0a0a;
+ --text: #ffffff;
+ --title: #ffffff;
+ --icon-color: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +14,7 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-  color: white;
+  color: var(--text);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +53,7 @@ header h1 {
   border: none;
   font-size: 26px;
   cursor: pointer;
-  color: white;
+  color: var(--icon-color);
 }
 
 /* language buttons */
@@ -92,7 +99,7 @@ header h1 {
 }
 
 .box h2 {
-  color: #ffffff;
+  color: var(--title);
   margin-bottom: 20px;
   font-size: 28px;
 }
@@ -172,9 +179,14 @@ footer {
 }
 
 /* Light theme */
-body.light {
-  background: #f4f4f4;
-  color: #121212;
+body.light{
+ --bg: #f4f4f4;
+ --text: #121212;
+ --title: #121212;
+ --icon-color: #121212;
+
+ background: var(--bg);
+ color: var(--text);
 }
 
 body.light .box {
