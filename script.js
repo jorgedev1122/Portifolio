@@ -145,32 +145,7 @@ My goal is to constantly evolve as a developer and build solutions that positive
   // ---------- Projetos Dinâmicos ----------
   const projetos = [
     {
-      titulo_pt: "🌐 Linktree",
-      descricao_pt: `Um site simples para reunir links importantes em um só lugar.  <br><strong>Tecnologias:</strong> HTML + CSS + JS <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.`,
-      titulo_en: "🌐 Linktree",
-      descricao_en: `A simple site to gather important links in one place.  <br><strong>Technologies:</strong> HTML + CSS + JS <br><em>Learned:</em> responsive design and CSS organization.`,
-      imagem: "Assets/FotoLinktree2.png",
-      online: "https://jorgedev1122.github.io/My-Linktree/",
-      codigo: "https://github.com/jorgedev1122/My-Linktree"
-    },
-    {
-      titulo_pt: "🧮 Calculadora Modular",
-      descricao_pt: `Uma calculadora com modos científicos, financeiros e mais.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> lógica, localStorage e modularização.`,
-      titulo_en: "🧮 Modular Calculator",
-      descricao_en: `A calculator with scientific and financial modes.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> logic, localStorage and modularization.`,
-      imagem: "Assets/FotoCalcMod.png",
-      online: "https://jorgedev1122.github.io/CalcMod/",
-      codigo: "https://github.com/jorgedev1122/CalcMod"
-    }, 
-    {titulo_pt: "🎓 EduSpace",
-      descricao_pt: `Um espaço que une recursos, tarefas, mensagens e mais para organizar seu aprendizado na escola.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> organização de paineis.`,
-      titulo_en: "🎓 EduSpace",
-      descricao_en: `A space that brings together resources, tasks, messages and more to organize your learning at school.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> panel organization.`,
-      imagem: "Assets/FotoEduspace.png",
-      online: "https://jorgedev1122.github.io/Eduspace/",
-      codigo: "https://github.com/jorgedev1122/EduSpace"
-    },
-    {titulo_pt: "🥊 Landing page de academia de Boxe - IronFist",
+      titulo_pt: "🥊 Landing page de academia de Boxe - IronFist",
       descricao_pt: `Uma landing page para uma academia de boxe fictícia chamada IronFist, com um design moderno e responsivo.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> design moderno e responsivo.`,
       titulo_en: "🥊 Boxing Gym Landing Page - IronFist",
       descricao_en: `A landing page for a fictional boxing gym called IronFist, with a modern and responsive design.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> modern and responsive design.`,
@@ -178,7 +153,8 @@ My goal is to constantly evolve as a developer and build solutions that positive
       online: "https://jorgedev1122.github.io/Iron-Fist/",
       codigo: "https://github.com/jorgedev1122/Iron-Fist"
     },
-    {titulo_pt: '🚴 Dashboard para ciclistas - Velocity Dash',
+    {
+      titulo_pt: '🚴 Dashboard para ciclistas - Velocity Dash',
       descricao_pt: `Um dashboard para ciclistas, com informações sobre rotas, desempenho e mais.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> design moderno e responsivo.`,
       titulo_en: '🚴 Cycling Dashboard - Velocity Dash',
       descricao_en: `A dashboard for cyclists, with information about routes, performance and more.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> modern and responsive design.`,
@@ -209,7 +185,33 @@ My goal is to constantly evolve as a developer and build solutions that positive
       imagem: "Assets/FotoSWARM.jpeg",
       online: "https://jorgedev1122.github.io/SWARM/",
       codigo: 'https://github.com/jorgedev1122/SWARM'
-    }
+    },
+        {
+      titulo_pt: "🧮 Calculadora Modular",
+      descricao_pt: `Uma calculadora com modos científicos, financeiros e mais.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> lógica, localStorage e modularização.`,
+      titulo_en: "🧮 Modular Calculator",
+      descricao_en: `A calculator with scientific and financial modes.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> logic, localStorage and modularization.`,
+      imagem: "Assets/FotoCalcMod.png",
+      online: "https://jorgedev1122.github.io/CalcMod/",
+      codigo: "https://github.com/jorgedev1122/CalcMod"
+    }, 
+        {titulo_pt: "🎓 EduSpace",
+      descricao_pt: `Um espaço que une recursos, tarefas, mensagens e mais para organizar seu aprendizado na escola.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> organização de paineis.`,
+      titulo_en: "🎓 EduSpace",
+      descricao_en: `A space that brings together resources, tasks, messages and more to organize your learning at school.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> panel organization.`,
+      imagem: "Assets/FotoEduspace.png",
+      online: "https://jorgedev1122.github.io/Eduspace/",
+      codigo: "https://github.com/jorgedev1122/EduSpace"
+    },
+        {
+      titulo_pt: "🌐 Linktree",
+      descricao_pt: `Um site simples para reunir links importantes em um só lugar.  <br><strong>Tecnologias:</strong> HTML + CSS + JS <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.`,
+      titulo_en: "🌐 Linktree",
+      descricao_en: `A simple site to gather important links in one place.  <br><strong>Technologies:</strong> HTML + CSS + JS <br><em>Learned:</em> responsive design and CSS organization.`,
+      imagem: "Assets/FotoLinktree2.png",
+      online: "https://jorgedev1122.github.io/My-Linktree/",
+      codigo: "https://github.com/jorgedev1122/My-Linktree"
+    },   
   ]; 
   
   
