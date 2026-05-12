@@ -161,15 +161,7 @@ My goal is to constantly evolve as a developer and build solutions that positive
       imagem: "Assets/FotoCalcMod.png",
       online: "https://jorgedev1122.github.io/CalcMod/",
       codigo: "https://github.com/jorgedev1122/CalcMod"
-    },
-    {titulo_pt: "📝 Roadmap",
-      descricao_pt: `Um roadmap para organizar seu aprendizado em programação.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> planejamento e organização.`,
-      titulo_en: "📝 Roadmap",
-      descricao_en: `A roadmap to organize your learning in programming.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> planning and organization.`,
-      imagem: "Assets/FotoRoadmap.png",
-      online: "https://jorgedev1122.github.io/Roadmap-Fullstack/",
-      codigo: "https://github.com/jorgedev1122/Roadmap-Fullstack"
-    },  
+    }, 
     {titulo_pt: "🎓 EduSpace",
       descricao_pt: `Um espaço que une recursos, tarefas, mensagens e mais para organizar seu aprendizado na escola.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> organização de paineis.`,
       titulo_en: "🎓 EduSpace",
@@ -209,6 +201,14 @@ My goal is to constantly evolve as a developer and build solutions that positive
       imagem: "Assets/FotoDB.png",
       online: "https://db-imports.vercel.app/",
       codigo: "https://github.com/jorgedev1122/DB-Imports"
+    },
+    {titulo_pt: ' 🧟▄︻デ══━一 Top view game shooter - SWARM',
+      descricao_pt: 'Um jogo top view shooter onde o jogador enfrente um vexame de zumbis incluindo boss, design simples porém mecânicas complexas.',
+      titulo_en: ' 🧟▄︻デ══━一 Top view shooter game - SWARM',
+      descricao_en: 'A top view shooter game where the player faces a swarm of zombies including a boss, with simple design but complex mechanics.',
+      imagem: "Assets/FotoSWARM.jpeg",
+      online: "https://jorgedev1122.github.io/SWARM/",
+      codigo: 'https://github.com/jorgedev1122/SWARM'
     }
   ]; 
   

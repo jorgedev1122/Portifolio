@@ -75,7 +75,7 @@ header h1 {
 
 .lang-btn[aria-pressed="true"] {
   background: #1c1c1c;
-  box-shadow: 0 8px 24px rgba(124,58,237,0.3);
+  box-shadow: 0 8px 24px rgba(120, 120, 120, 0.3);
   color: white;
 }
 
@@ -191,7 +191,7 @@ body.light{
 
 body.light .box {
   background: white;
-  border: 2px solid #7c3aed;
+  border: 2px solid #000000;
   color: #121212;
 }
 
