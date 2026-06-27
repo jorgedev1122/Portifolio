@@ -195,10 +195,10 @@ My goal is to constantly evolve as a developer and build solutions that positive
       codigo: "https://github.com/jorgedev1122/DB-Imports",
     },
     {
-      titulo_pt: " 🧟▄︻デ══━一 Top view game shooter - SWARM",
+      titulo_pt: " 🧟︻┳═一 Top view game shooter - SWARM",
       descricao_pt:
         "Um jogo top view shooter onde o jogador enfrente um vexame de zumbis incluindo boss, design simples porém mecânicas complexas.",
-      titulo_en: " 🧟▄︻デ══━一 Top view shooter game - SWARM",
+      titulo_en: " 🧟︻┳═一 Top view shooter game - SWARM",
       descricao_en:
         "A top view shooter game where the player faces a swarm of zombies including a boss, with simple design but complex mechanics.",
       imagem: "Assets/FotoSWARM.jpeg",
