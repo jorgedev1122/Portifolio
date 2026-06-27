@@ -19,10 +19,8 @@ Este repositório foi feito para **mostrar minha evolução** e **compartilhar o
 
 ---
 
-## 📌 Projetos em Destaque
-- [🌐 Linktree](https://jorgedev1122.github.io/My-Linktree/) – Um site simples para reunir links importantes.  
-- Mais projetos em breve... 👨‍💻
-
+## 📌 Projeto destaque
+- [🥊 IronFist](https://jorgedev1122.github.io/Iron-Fist/) – Landingp page fictícia de boxe para atrair clientes.
 ---
 
 ## 🎯 Objetivo
