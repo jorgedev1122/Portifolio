@@ -184,17 +184,6 @@ My goal is to constantly evolve as a developer and build solutions that positive
       codigo: "https://github.com/jorgedev1122/SK8HUB",
     },
     {
-      titulo_pt: "🚚 Landing page premium (REAL) - DB-imports",
-      descricao_pt:
-        "Projeto de vitrine digital feita para a empresa de importação DB-imports, com design moderno e responsivo.",
-      titulo_en: "🚚 Premium Landing Page (REAL) - DB-imports",
-      descricao_en:
-        "Digital showcase project made for the import company DB-imports, with a modern and responsive design.",
-      imagem: "Assets/FotoDB.png",
-      online: "https://db-imports.vercel.app/",
-      codigo: "https://github.com/jorgedev1122/DB-Imports",
-    },
-    {
       titulo_pt: " 🧟︻┳═一 Top view game shooter - SWARM",
       descricao_pt:
         "Um jogo top view shooter onde o jogador enfrente um vexame de zumbis incluindo boss, design simples porém mecânicas complexas.",
@@ -204,6 +193,17 @@ My goal is to constantly evolve as a developer and build solutions that positive
       imagem: "Assets/FotoSWARM.jpeg",
       online: "https://swarm-0sk7.onrender.com/",
       codigo: "https://github.com/jorgedev1122/SWARM",
+    },
+    {
+      titulo_pt: "🚚 Landing page premium (REAL) - DB-imports",
+      descricao_pt:
+        "Projeto de vitrine digital feita para a empresa de importação DB-imports, com design moderno e responsivo.",
+      titulo_en: "🚚 Premium Landing Page (REAL) - DB-imports",
+      descricao_en:
+        "Digital showcase project made for the import company DB-imports, with a modern and responsive design.",
+      imagem: "Assets/FotoDB.png",
+      online: "https://db-imports.vercel.app/",
+      codigo: "https://github.com/jorgedev1122/DB-Imports",
     },
     {
       titulo_pt: "🧮 Calculadora Modular",
@@ -222,15 +222,6 @@ My goal is to constantly evolve as a developer and build solutions that positive
       imagem: "Assets/FotoEduspace.png",
       online: "https://jorgedev1122.github.io/Eduspace/",
       codigo: "https://github.com/jorgedev1122/EduSpace",
-    },
-    {
-      titulo_pt: "🌐 Linktree",
-      descricao_pt: `Um site simples para reunir links importantes em um só lugar.  <br><strong>Tecnologias:</strong> HTML + CSS + JS <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.`,
-      titulo_en: "🌐 Linktree",
-      descricao_en: `A simple site to gather important links in one place.  <br><strong>Technologies:</strong> HTML + CSS + JS <br><em>Learned:</em> responsive design and CSS organization.`,
-      imagem: "Assets/FotoLinktree2.png",
-      online: "https://jorgedev1122.github.io/My-Linktree/",
-      codigo: "https://github.com/jorgedev1122/My-Linktree",
     },
   ];
 
