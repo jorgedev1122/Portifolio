@@ -1,136 +1,588 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portifólio - Jorge Enrique</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/9e869c2f88.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-</head>
-<body>
-  <!-- HEADER -->
-  <header>
-    <h1 id="site-title">Jorge Enrique - Portifólio</h1>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <div class="header-controls">
-      <div class="lang-switch">
-        <button id="btn-pt" aria-pressed="true" class="lang-btn">PT</button>
-        <button id="btn-en" aria-pressed="false" class="lang-btn">EN</button>
+  <title>Jorge Enrique — Portfólio</title>
+  <meta
+    name="description"
+    content="Portfólio de Jorge Enrique — Desenvolvedor Front-end e desenvolvedor de jogos."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script
+    src="https://kit.fontawesome.com/9e869c2f88.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</head>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+/>
+
+<body>
+
+  <header class="header">
+    <a href="#inicio" class="logo">
+      <span>J</span>
+      <strong>Jorge<span>Dev</span></strong>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#sobre" data-i18n="navAbout">Sobre</a>
+      <a href="#projetos" data-i18n="navProjects">Projetos</a>
+      <a href="#jogos" data-i18n="navGames">Jogos</a>
+      <a href="#tecnologias" data-i18n="navTech">Tecnologias</a>
+      <a href="#contato" data-i18n="navContact">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="language-switch">
+        <button id="btn-pt" class="language-btn active" aria-label="Português">
+          PT
+        </button>
+
+        <button id="btn-en" class="language-btn" aria-label="English">
+          EN
+        </button>
       </div>
 
-      <button id="theme-toggle"><ion-icon name="moon-outline"></ion-icon></button>
+      <button
+        id="theme-toggle"
+        class="icon-button"
+        aria-label="Alternar tema"
+        title="Alternar tema"
+      >
+        <ion-icon name="moon-outline"></ion-icon>
+      </button>
+
+      <button
+        id="menu-toggle"
+        class="menu-button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
     </div>
   </header>
 
+
   <main>
-    <!-- SOBRE MIM -->
-    <section class="box reveal">
-      <h2 id="sobre-heading">👋 Sobre mim</h2>
-      <p id="sobre-text">
-Sou Jorge Enrique, desenvolvedor iniciante apaixonado por tecnologia.
 
-Comecei a estudar programação cedo e atualmente desenvolvo projetos em
-HTML, CSS, JavaScript e Python para aprimorar minhas habilidades.
+    <section class="hero section" id="inicio">
 
-Meu objetivo é evoluir constantemente como desenvolvedor e construir
-soluções que impactem pessoas de forma positiva.
-</p>
-      <div class="social">
-        <a href="https://github.com/jorgedev1122" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://app.rocketseat.com.br/me/jjorge-enrique" target="_blank"><i class="fa-solid fa-circle-user"></i></a>
-        <a href="https://www.instagram.com/j0rge.enr1122" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-    </section>
+      <div class="hero-content reveal">
 
-    <!-- PROJETOS -->
-    <section class="box reveal">
-      <h2 id="projects-heading">💻 Projetos</h2>
-      <div class="projeto">
-        <h3 id="projeto-titulo">🥊 Landing page de academia de Boxe - IronFist</h3>
-        <p id="projeto-descricao">
-          Uma landing page para uma academia de boxe fictícia chamada IronFist, com um design moderno e responsivo.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> design moderno e responsivo. 
-          <br><strong>Tecnologias:</strong> HTML + CSS + JS 
-          <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.
+        <div class="status">
+          <span class="status-dot"></span>
+          <span data-i18n="heroStatus">Disponível para aprender e criar</span>
+        </div>
+
+        <p class="hero-small" data-i18n="heroSmall">
+          Olá, eu sou
         </p>
 
-        <img id="projeto-img" src="./Assets/FotoBoxe.png" alt="Preview do projeto" class="projeto-img">
+        <h1>
+          Jorge <span>Enrique</span>
+        </h1>
 
-        <div class="botoes">
-          <a id="btn-online" href="https://jorgedev1122.github.io/My-Linktree/" target="_blank" class="btn">🔗 Ver Online</a>
-          <a id="btn-codigo" href="https://github.com/jorgedev1122/My-Linktree" target="_blank" class="btn">💻 Código</a>
+        <h2 data-i18n="heroRole">
+          Desenvolvedor Front-end & Desenvolvedor de Jogos
+        </h2>
+
+        <p class="hero-description" data-i18n="heroDescription">
+          Desenvolvo projetos web e jogos enquanto transformo ideias em
+          experiências reais através da programação.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projetos" class="primary-button">
+            <span data-i18n="heroProjects">Ver projetos</span>
+            <ion-icon name="arrow-down-outline"></ion-icon>
+          </a>
+
+          <a
+            href="https://github.com/jorgedev1122"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="secondary-button"
+          >
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
         </div>
 
-        <!-- Setas de navegação -->
-        <div class="navegacao">
-          <button id="anterior" class="seta">←</button>
-          <button id="proximo" class="seta">→</button>
+        <div class="hero-tech">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Python</span>
+        </div>
+
+      </div>
+
+      <div class="hero-decoration">
+        <div class="glow"></div>
+
+        <div class="code-card">
+          <div class="code-top">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <pre><code><span class="code-purple">const</span> developer = {
+  name: <span class="code-green">"Jorge Enrique"</span>,
+  role: <span class="code-green">"Front-end & Games"</span>,
+  passion: <span class="code-green">"Technology"</span>,
+  learning: <span class="code-blue">true</span>
+};</code></pre>
         </div>
       </div>
+
     </section>
 
-    <!-- TECNOLOGIAS -->
-    <section class="box reveal">
-      <h2 id="tech-heading">⚙️ Tecnologias</h2>
-      <div class="tech-icons">
-       <ion-icon class="tech-icon html" name="logo-html5"></ion-icon>
-<ion-icon class="tech-icon css" name="logo-css3"></ion-icon>
-<ion-icon class="tech-icon js" name="logo-javascript"></ion-icon>
-<ion-icon class="tech-icon python" name="logo-python"></ion-icon>
+    <section class="section" id="sobre">
+
+      <div class="section-heading reveal">
+        <span class="section-number">01</span>
+
+        <div>
+          <p class="section-label" data-i18n="aboutLabel">
+            Conheça um pouco mais
+          </p>
+
+          <h2 data-i18n="aboutHeading">
+            👋 Sobre mim
+          </h2>
+        </div>
       </div>
+
+      <div class="about-grid">
+
+        <article class="about-card reveal">
+
+          <div class="about-icon">
+            <ion-icon name="code-slash-outline"></ion-icon>
+          </div>
+
+          <div>
+            <p data-i18n="aboutText">
+              Sou Jorge Enrique, desenvolvedor Front-end e desenvolvedor de
+              jogos apaixonado por tecnologia.
+
+              Atualmente, crio projetos utilizando HTML, CSS, JavaScript e
+              Python, enquanto continuo estudando por meio de cursos e projetos
+              próprios para aprimorar minhas habilidades e ampliar meus
+              conhecimentos.
+
+              Gosto de transformar ideias em projetos reais, explorando tanto
+              o desenvolvimento web quanto a criação de jogos e experiências
+              interativas.
+
+              Meu objetivo é evoluir constantemente como desenvolvedor, criar
+              soluções úteis e transformar minhas ideias em projetos que possam
+              impactar pessoas de forma positiva.
+            </p>
+          </div>
+
+        </article>
+
+
+        <aside class="about-side reveal">
+
+          <div class="mini-card">
+            <span class="mini-icon">
+              <ion-icon name="globe-outline"></ion-icon>
+            </span>
+
+            <div>
+              <strong data-i18n="aboutWebTitle">Desenvolvimento Web</strong>
+              <p data-i18n="aboutWebText">
+                Interfaces modernas, responsivas e funcionais.
+              </p>
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <span class="mini-icon">
+              <ion-icon name="game-controller-outline"></ion-icon>
+            </span>
+
+            <div>
+              <strong data-i18n="aboutGameTitle">Desenvolvimento de Jogos</strong>
+              <p data-i18n="aboutGameText">
+                Criando jogos e experiências interativas com programação.
+              </p>
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <span class="mini-icon">
+              <ion-icon name="school-outline"></ion-icon>
+            </span>
+
+            <div>
+              <strong data-i18n="aboutLearningTitle">Sempre aprendendo</strong>
+              <p data-i18n="aboutLearningText">
+                Cursos, projetos próprios e muita prática.
+              </p>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+
     </section>
 
-    <!-- CERTIFICADOS -->
-<section class="box reveal">
-  <h2 id="cert-heading">📜 Certificados</h2>
+    <section class="section" id="projetos">
 
-  <div class="certificado">
-    <h3 id="cert-titulo">Curso Discover</h3>
-    <p id="cert-descricao">
-      O <strong>Curso Discover</strong> da Rocketseat é uma introdução completa e prática ao desenvolvimento web.
-    </p>
+      <div class="section-heading reveal">
+        <span class="section-number">02</span>
 
-    <img id="cert-img" src="./Assets/Certificado.png" alt="Certificado Rocketseat" class="cert-img">
+        <div>
+          <p class="section-label" data-i18n="projectsLabel">
+            O que eu construí
+          </p>
 
-    <div class="botoes">
-      <a id="btn-cert-link" href="https://app.rocketseat.com.br/certificates/63f04b36-f352-422b-bc8c-41be7b914158" target="_blank" class="btn">🔗 Ver Certificado</a>
+          <h2 data-i18n="projectsHeading">
+            🌐 Sites & Projetos
+          </h2>
+        </div>
+      </div>
+
+      <p class="section-description reveal" data-i18n="projectsDescription">
+        Projetos desenvolvidos para praticar programação, design, responsividade
+        e criação de experiências para a web.
+      </p>
+
+      <div class="projects-grid" id="projects-grid"></div>
+
+    </section>
+
+    <section class="section" id="jogos">
+
+      <div class="section-heading reveal">
+        <span class="section-number">03</span>
+
+        <div>
+          <p class="section-label" data-i18n="gamesLabel">
+            Projetos interativos
+          </p>
+
+          <h2 data-i18n="gamesHeading">
+            🎮 Jogos
+          </h2>
+        </div>
+      </div>
+
+      <p class="section-description reveal" data-i18n="gamesDescription">
+        Jogos e experiências interativas que desenvolvo para explorar lógica,
+        programação e criação de sistemas.
+      </p>
+
+      <div id="games-grid" class="games-grid"></div>
+
+    </section>
+
+    <section class="section" id="tecnologias">
+
+      <div class="section-heading reveal">
+        <span class="section-number">04</span>
+
+        <div>
+          <p class="section-label" data-i18n="techLabel">
+            O que utilizo
+          </p>
+
+          <h2 data-i18n="techHeading">
+            ⚙️ Tecnologias
+          </h2>
+        </div>
+      </div>
+
+      <div class="tech-groups">
+
+        <div class="tech-group reveal">
+          <h3 data-i18n="techLanguages">Linguagens</h3>
+
+          <div class="tech-grid">
+
+            <div class="tech-card">
+              <ion-icon class="html" name="logo-html5"></ion-icon>
+              <strong>HTML</strong>
+              <span>Web</span>
+            </div>
+
+            <div class="tech-card">
+              <ion-icon class="css" name="logo-css3"></ion-icon>
+              <strong>CSS</strong>
+              <span>Web</span>
+            </div>
+
+            <div class="tech-card">
+              <ion-icon class="js" name="logo-javascript"></ion-icon>
+              <strong>JavaScript</strong>
+              <span>Programming</span>
+            </div>
+
+            <div class="tech-card">
+              <ion-icon class="python" name="logo-python"></ion-icon>
+              <strong>Python</strong>
+              <span>Programming</span>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="tech-group reveal">
+  <h3 data-i18n="techTools">Ferramentas</h3>
+
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <i class="devicon-github-original"></i>
+      <div>
+        <strong>GitHub</strong>
+        <span data-i18n="githubTool">Versionamento & projetos</span>
+      </div>
     </div>
 
-    <!-- Setas de navegação -->
-    <div class="navegacao">
-      <button id="anterior-cert" class="seta">←</button>
-      <button id="proximo-cert" class="seta">→</button>
+    <div class="tool-card">
+      <i class="devicon-vscode-plain"></i>
+      <div>
+        <strong>VS Code</strong>
+        <span data-i18n="vscodeTool">Ambiente de desenvolvimento</span>
+      </div>
     </div>
+
+    <div class="tool-card">
+      <i class="devicon-githubcodespaces-plain"></i>
+      <div>
+        <strong>GitHub Copilot</strong>
+        <span data-i18n="copilotTool">Assistência com IA</span>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+      <div>
+        <strong>Codex</strong>
+        <span data-i18n="codexTool">IA para desenvolvimento</span>
+      </div>
+    </div>
+
   </div>
-</section>
+</div>
 
-
-<section class="box reveal">
-  <h2>📊 GitHub Status</h2>
-  <img id="gh-stats" src="https://github-readme-stats.vercel.app/api?username=jorgedev1122&theme=dark&show_icons=true" alt="GitHub Readme Stats" onerror="this.style.display='none'; showGithubFallback();">
-  <img id="gh-toplangs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jorgedev1122&theme=dark&layout=compact" alt="GitHub Top Languages" onerror="this.style.display='none'; showGithubFallback();">
-  <p id="gh-fallback-pt" style="display:none; margin-top:12px;">GitHub Stats temporariamente indisponível. Tente atualizar em alguns minutos ou confira meu perfil no GitHub diretamente.</p>
-  <p id="gh-fallback-en" style="display:none; margin-top:12px;">GitHub Stats temporarily unavailable. Try refreshing in a few minutes or check my GitHub profile directly.</p>
-</section>
-
-
-
-
-    <!-- CONTATO -->
-    <section class="box reveal">
-      <h2 id="contact-heading">Contato</h2>
-      <p id="contact-sub">🢃 Entre em Contato comigo por email 🢃</p>
-      <p class="email" id="contact-email">jorgeenriqueantunes@gmail.com</p>
     </section>
+
+    <section class="section" id="certificados">
+
+      <div class="section-heading reveal">
+        <span class="section-number">05</span>
+
+        <div>
+          <p class="section-label" data-i18n="certLabel">
+            Estudos e aprendizado
+          </p>
+
+          <h2 data-i18n="certHeading">
+            📜 Certificados
+          </h2>
+        </div>
+      </div>
+
+      <div class="certificate-layout reveal">
+
+        <div class="certificate-image-wrapper">
+          <img
+            id="cert-img"
+            src="Assets/Certificado.png"
+            alt="Certificado"
+            class="certificate-image"
+          />
+        </div>
+
+        <div class="certificate-info">
+
+          <span class="certificate-count" id="cert-count">
+            01 / 03
+          </span>
+
+          <h3 id="cert-titulo">
+            Discover
+          </h3>
+
+          <p id="cert-descricao">
+            O Curso Discover da Rocketseat é uma introdução prática ao
+            desenvolvimento web.
+          </p>
+
+          <a
+            id="btn-cert-link"
+            href="https://app.rocketseat.com.br/certificates/63f04b36-f352-422b-bc8c-41be7b914158"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="primary-button"
+          >
+            <span data-i18n="viewCertificate">
+              Ver certificado
+            </span>
+
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </a>
+
+          <div class="slider-controls">
+            <button id="anterior-cert" class="slider-button">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </button>
+
+            <button id="proximo-cert" class="slider-button">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section" id="github">
+
+      <div class="section-heading reveal">
+        <span class="section-number">06</span>
+
+        <div>
+          <p class="section-label">GitHub</p>
+
+          <h2 data-i18n="githubHeading">
+            📊 Minha atividade
+          </h2>
+        </div>
+      </div>
+
+      <div class="github-card reveal">
+
+        <div class="github-header">
+          <div>
+            <h3 data-i18n="githubTitle">
+              Código, projetos e evolução
+            </h3>
+
+            <p data-i18n="githubDescription">
+              Acompanhe meus projetos e veja no que estou trabalhando.
+            </p>
+          </div>
+
+          <a
+            href="https://github.com/jorgedev1122"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-profile-button"
+          >
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
+        </div>
+
+        <div class="github-stats">
+
+          <img
+            id="gh-stats"
+            src="https://github-readme-stats.vercel.app/api?username=jorgedev1122&theme=dark&show_icons=true&hide_border=true"
+            alt="GitHub statistics"
+          />
+
+          <img
+            id="gh-toplangs"
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=jorgedev1122&theme=dark&layout=compact&hide_border=true"
+            alt="Most used languages"
+          />
+
+        </div>
+
+        <p id="gh-fallback" class="github-fallback">
+          <span data-i18n="githubFallback">
+            GitHub Stats temporariamente indisponível. Confira meu perfil
+            diretamente no GitHub.
+          </span>
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="section contact-section" id="contato">
+
+      <div class="contact-card reveal">
+
+        <span class="contact-number">07</span>
+
+        <p class="section-label" data-i18n="contactLabel">
+          Vamos conversar?
+        </p>
+
+        <h2 data-i18n="contactHeading">
+          Tem um projeto em mente?
+        </h2>
+
+        <p data-i18n="contactDescription">
+          Estou sempre aprendendo, criando e explorando novas ideias.
+          Entre em contato para conhecer meu trabalho.
+        </p>
+
+        <a
+          href="mailto:jorgeenriqueantunes@gmail.com"
+          class="email-link"
+        >
+          <ion-icon name="mail-outline"></ion-icon>
+          jorgeenriqueantunes@gmail.com
+        </a>    
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
   <footer>
-<p>© 2026 Jorge Enrique</p>
-<p>Built with HTML, CSS and JavaScript</p>
-</footer>
+
+    <div class="footer-logo">
+      <span>J</span>
+      <strong>Jorge<span>Dev</span></strong>
+    </div>
+
+    <p data-i18n="footerText">
+      © 2026 Jorge Enrique. Feito com código, criatividade e muita vontade de aprender.
+    </p>
+
+    <span data-i18n="footerBuilt">
+      HTML • CSS • JavaScript
+    </span>
+
+  </footer>
+
 
   <script src="script.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>

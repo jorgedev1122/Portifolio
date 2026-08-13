@@ -1,344 +1,838 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ---------- Tema Dark/Light ----------
-  const btn = document.getElementById("theme-toggle");
+  /* =========================================================
+     ELEMENTOS
+  ========================================================== */
+
   const body = document.body;
 
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") body.classList.add("light");
+  const themeToggle = document.getElementById("theme-toggle");
+  const menuToggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav");
 
-  btn.addEventListener("click", () => {
+  const btnPT = document.getElementById("btn-pt");
+  const btnEN = document.getElementById("btn-en");
+
+  const projectsGrid = document.getElementById("projects-grid");
+  const gamesGrid = document.getElementById("games-grid");
+
+  const certImg = document.getElementById("cert-img");
+  const certTitulo = document.getElementById("cert-titulo");
+  const certDescricao = document.getElementById("cert-descricao");
+  const certLink = document.getElementById("btn-cert-link");
+  const certCount = document.getElementById("cert-count");
+
+  const previousCert = document.getElementById("anterior-cert");
+  const nextCert = document.getElementById("proximo-cert");
+
+  const githubStats = document.getElementById("gh-stats");
+  const githubTopLangs = document.getElementById("gh-toplangs");
+  const githubFallback = document.getElementById("gh-fallback");
+
+  /* =========================================================
+     TEMA
+  ========================================================== */
+
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light") {
+    body.classList.add("light");
+  }
+
+  function updateThemeIcon() {
+    const icon = themeToggle.querySelector("ion-icon");
+
+    if (!icon) return;
+
+    icon.setAttribute(
+      "name",
+      body.classList.contains("light") ? "sunny-outline" : "moon-outline",
+    );
+  }
+
+  updateThemeIcon();
+
+  themeToggle.addEventListener("click", () => {
     body.classList.toggle("light");
+
     localStorage.setItem(
       "theme",
       body.classList.contains("light") ? "light" : "dark",
     );
+
+    updateThemeIcon();
   });
 
-  // ---------- ScrollReveal ----------
-  ScrollReveal().reveal(".reveal", {
-    distance: "50px",
-    duration: 1000,
-    easing: "ease-in-out",
-    origin: "bottom",
-    interval: 200,
-  });
+  /* =========================================================
+     MENU MOBILE
+  ========================================================== */
 
-  // ---------- GitHub Status Fallback ----------
-  window.showGithubFallback = function () {
-    const currentLang = localStorage.getItem("site-lang") || "pt";
-    const fallbackPT = document.getElementById("gh-fallback-pt");
-    const fallbackEN = document.getElementById("gh-fallback-en");
+  menuToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
 
-    if (fallbackPT) fallbackPT.style.display = "none";
-    if (fallbackEN) fallbackEN.style.display = "none";
+    menuToggle.setAttribute("aria-expanded", isOpen);
 
-    if (currentLang === "pt" && fallbackPT) {
-      fallbackPT.style.display = "block";
-    } else if (currentLang === "en" && fallbackEN) {
-      fallbackEN.style.display = "block";
+    const icon = menuToggle.querySelector("ion-icon");
+
+    if (icon) {
+      icon.setAttribute("name", isOpen ? "close-outline" : "menu-outline");
     }
-  };
+  });
 
-  // ---------- Idiomas ----------
-  const btnPT = document.getElementById("btn-pt");
-  const btnEN = document.getElementById("btn-en");
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
 
-  const elements = {
-    siteTitle: document.getElementById("site-title"),
-    sobreHeading: document.getElementById("sobre-heading"),
-    sobreText: document.getElementById("sobre-text"),
-    projectsHeading: document.getElementById("projects-heading"),
-    projetoTitulo: document.getElementById("projeto-titulo"),
-    projetoDescricao: document.getElementById("projeto-descricao"),
-    btnOnline: document.getElementById("btn-online"),
-    btnCodigo: document.getElementById("btn-codigo"),
-    techHeading: document.getElementById("tech-heading"),
-    certHeading: document.getElementById("cert-heading"),
-    certificadosText: document.getElementById("certificados-text"),
-    certTitulo: document.getElementById("cert-titulo"),
-    certDescricao: document.getElementById("cert-descricao"),
-    contactHeading: document.getElementById("contact-heading"),
-    contactSub: document.getElementById("contact-sub"),
-    contactEmail: document.getElementById("contact-email"),
-    footerText: document.getElementById("footer-text"),
-  };
+      menuToggle.setAttribute("aria-expanded", "false");
+
+      const icon = menuToggle.querySelector("ion-icon");
+
+      if (icon) {
+        icon.setAttribute("name", "menu-outline");
+      }
+    });
+  });
+
+  /* =========================================================
+     TRADUÇÕES
+  ========================================================== */
 
   const translations = {
     pt: {
-      siteTitle: `Jorge Enrique - Portifólio`,
-      sobreHeading: `👋 Sobre mim`,
-      sobreText: `Sou Jorge Enrique, desenvolvedor iniciante apaixonado por tecnologia.
+      pageTitle: "Jorge Enrique — Portfólio",
 
-Comecei a estudar programação cedo e atualmente desenvolvo projetos em
-HTML, CSS, JavaScript e Python para aprimorar minhas habilidades.
+      navAbout: "Sobre",
 
-Meu objetivo é evoluir constantemente como desenvolvedor e construir
-soluções que impactem pessoas de forma positiva.`,
-      projectsHeading: `💻 Projetos`,
-      projetoTitulo: `🌐 Linktree`,
-      projetoDescricao: `Um site simples para reunir links importantes em um só lugar.  <br><strong>Tecnologias:</strong> HTML + CSS + JS <br><em>Aprendizado:</em> trabalhar responsividade e organização de CSS.`,
-      btnOnline: `🔗 Ver Online`,
-      btnCodigo: `💻 Código`,
-      techHeading: `⚙️ Tecnologias`,
-      certHeading: `📜 Certificados`,
-      certificadosText: `<p>O <strong>Curso Discover</strong> da Rocketseat é uma introdução completa e prática ao desenvolvimento web, focada em fundamentos essenciais para a criação de aplicações modernas. Durante o curso, aprendi os conceitos básicos de <strong>HTML, CSS e JavaScript</strong>, além de entender como construir páginas responsivas e interativas.</p>`,
-      certTitulo: `Curso Discover`,
-      certDescricao: `O Curso Discover da Rocketseat é uma introdução prática ao desenvolvimento web, aprendendo HTML, CSS e JS.`,
-      contactHeading: `Contato`,
-      certVerCertificado: `🔗 Ver Certificado`,
-      github: `🔗 My GitHub`,
-      contactSub: `🢃 Entre em Contato comigo por email 🢃`,
-      contactEmail: `jorgeenriqueantunes@gmail.com`,
-      footerText: `© 2025 - Jorge Enrique`,
+      navProjects: "Projetos",
+
+      navGames: "Jogos",
+
+      navTech: "Tecnologias",
+
+      navContact: "Contato",
+
+      heroStatus: "Disponível para aprender e criar",
+
+      heroSmall: "Olá, eu sou",
+
+      heroRole: "Desenvolvedor Front-end & Desenvolvedor de Jogos",
+
+      heroDescription:
+        "Desenvolvo projetos web e jogos enquanto transformo ideias em experiências reais através da programação.",
+
+      heroProjects: "Ver projetos",
+
+      aboutLabel: "Conheça um pouco mais",
+
+      aboutHeading: "👋 Sobre mim",
+
+      aboutText: `Sou Jorge Enrique, desenvolvedor Front-end e desenvolvedor de jogos apaixonado por tecnologia.
+
+Atualmente, crio projetos utilizando HTML, CSS, JavaScript e Python, enquanto continuo estudando por meio de cursos e projetos próprios para aprimorar minhas habilidades e ampliar meus conhecimentos.
+
+Gosto de transformar ideias em projetos reais, explorando tanto o desenvolvimento web quanto a criação de jogos e experiências interativas.
+
+Meu objetivo é evoluir constantemente como desenvolvedor, criar soluções úteis e transformar minhas ideias em projetos que possam impactar pessoas de forma positiva.`,
+
+      aboutWebTitle: "Desenvolvimento Web",
+
+      aboutWebText: "Interfaces modernas, responsivas e funcionais.",
+
+      aboutGameTitle: "Desenvolvimento de Jogos",
+
+      aboutGameText:
+        "Criando jogos e experiências interativas com programação.",
+
+      aboutLearningTitle: "Sempre aprendendo",
+
+      aboutLearningText: "Cursos, projetos próprios e muita prática.",
+
+      projectsLabel: "O que eu construí",
+
+      projectsHeading: "🌐 Sites & Projetos",
+
+      projectsDescription:
+        "Projetos desenvolvidos para praticar programação, design, responsividade e criação de experiências para a web.",
+
+      gamesLabel: "Projetos interativos",
+
+      gamesHeading: "🎮 Jogos",
+
+      gamesDescription:
+        "Jogos e experiências interativas que desenvolvo para explorar lógica, programação e criação de sistemas.",
+
+      techLabel: "O que utilizo",
+
+      techHeading: "⚙️ Tecnologias",
+
+      techLanguages: "Linguagens",
+
+      techTools: "Ferramentas",
+
+      githubTool: "Versionamento & projetos",
+
+      vscodeTool: "Ambiente de desenvolvimento",
+
+      copilotTool: "Assistência com IA",
+
+      codexTool: "IA para desenvolvimento",
+
+      certLabel: "Estudos e aprendizado",
+
+      certHeading: "📜 Certificados",
+
+      viewCertificate: "Ver certificado",
+
+      githubHeading: "📊 Minha atividade",
+
+      githubTitle: "Código, projetos e evolução",
+
+      githubDescription:
+        "Acompanhe meus projetos e veja no que estou trabalhando.",
+
+      githubFallback:
+        "GitHub Stats temporariamente indisponível. Confira meu perfil diretamente no GitHub.",
+
+      contactLabel: "Vamos conversar?",
+
+      contactHeading: "Tem um projeto em mente?",
+
+      contactDescription:
+        "Estou sempre aprendendo, criando e explorando novas ideias. Entre em contato para conhecer meu trabalho.",
+
+      footerText:
+        "© 2026 Jorge Enrique. Feito com código, criatividade e muita vontade de aprender.",
+
+      footerBuilt: "HTML • CSS • JavaScript",
     },
+
     en: {
-      siteTitle: `Jorge Enrique - Portifolio`,
-      sobreHeading: `👋 About me`,
-      sobreText: `I'm Jorge Enrique, a beginner developer passionate about technology.
+      pageTitle: "Jorge Enrique — Portfolio",
 
-I started studying programming early and currently develop projects in HTML, CSS, JavaScript, and Python to improve my skills.
+      navAbout: "About",
 
-My goal is to constantly evolve as a developer and build solutions that positively impact people.`,
-      projectsHeading: `💻 Projects`,
-      projetoTitulo: `🌐 Linktree`,
-      projetoDescricao: `A simple site to gather important links in one place.  <br><strong>Technologies:</strong> HTML + CSS + JS <br><em>Learned:</em> responsive design and CSS organization.`,
-      btnOnline: `🔗 View Online`,
-      btnCodigo: `💻 Code`,
-      techHeading: `⚙️ Technologies`,
-      certHeading: `📜 Certificates`,
-      certificadosText: `<p>The <strong>Discover course</strong> from Rocketseat is a practical introduction to web development, focused on key fundamentals for building modern applications.</p>`,
-      certTitulo: `Discover Course`,
-      certDescricao: `The Discover Course from Rocketseat is a hands-on introduction to web development, learning HTML, CSS and JS.`,
-      contactHeading: `Contact`,
-      certVerCertificado: `🔗 View the certificate`,
-      github: `🔗 My GitHub`,
-      contactSub: `🢃 Get in touch via email 🢃`,
-      contactEmail: `jorgeenriqueantunes@gmail.com`,
-      footerText: `© 2025 - Jorge Enrique`,
+      navProjects: "Projects",
+
+      navGames: "Games",
+
+      navTech: "Technologies",
+
+      navContact: "Contact",
+
+      heroStatus: "Always learning and creating",
+
+      heroSmall: "Hello, I'm",
+
+      heroRole: "Front-end Developer & Game Developer",
+
+      heroDescription:
+        "I build web projects and games while turning ideas into real experiences through programming.",
+
+      heroProjects: "View projects",
+
+      aboutLabel: "Get to know me",
+
+      aboutHeading: "👋 About me",
+
+      aboutText: `I'm Jorge Enrique, a Front-end Developer and Game Developer passionate about technology.
+
+I currently create projects using HTML, CSS, JavaScript, and Python while continuing to learn through courses and personal projects to improve my skills and expand my knowledge.
+
+I enjoy turning ideas into real projects, exploring both web development and game development through interactive experiences.
+
+My goal is to constantly grow as a developer, build useful solutions, and turn my ideas into projects that can have a positive impact on people.`,
+
+      aboutWebTitle: "Web Development",
+
+      aboutWebText: "Modern, responsive, and functional interfaces.",
+
+      aboutGameTitle: "Game Development",
+
+      aboutGameText:
+        "Creating games and interactive experiences through programming.",
+
+      aboutLearningTitle: "Always Learning",
+
+      aboutLearningText: "Courses, personal projects, and lots of practice.",
+
+      projectsLabel: "What I've built",
+
+      projectsHeading: "🌐 Websites & Projects",
+
+      projectsDescription:
+        "Projects built to practice programming, design, responsiveness, and creating experiences for the web.",
+
+      gamesLabel: "Interactive projects",
+
+      gamesHeading: "🎮 Games",
+
+      gamesDescription:
+        "Games and interactive experiences I build to explore logic, programming, and system design.",
+
+      techLabel: "What I use",
+
+      techHeading: "⚙️ Technologies",
+
+      techLanguages: "Languages",
+
+      techTools: "Tools",
+
+      githubTool: "Version control & projects",
+
+      vscodeTool: "Development environment",
+
+      copilotTool: "AI assistance",
+
+      codexTool: "AI for development",
+
+      certLabel: "Learning & education",
+
+      certHeading: "📜 Certificates",
+
+      viewCertificate: "View certificate",
+
+      githubHeading: "📊 My activity",
+
+      githubTitle: "Code, projects, and progress",
+
+      githubDescription:
+        "Check out my projects and see what I'm currently working on.",
+
+      githubFallback:
+        "GitHub Stats are temporarily unavailable. Check my GitHub profile directly.",
+
+      contactLabel: "Let's talk?",
+
+      contactHeading: "Have a project in mind?",
+
+      contactDescription:
+        "I'm always learning, creating, and exploring new ideas. Get in touch to learn more about my work.",
+
+      footerText:
+        "© 2026 Jorge Enrique. Built with code, creativity, and a lot of curiosity.",
+
+      footerBuilt: "HTML • CSS • JavaScript",
     },
   };
 
-  function setLangUI(lang) {
-    btnPT.setAttribute("aria-pressed", lang === "pt");
-    btnEN.setAttribute("aria-pressed", lang === "en");
+  /* =========================================================
+     PROJETOS
+  ========================================================== */
 
-    for (const key in elements) {
-      if (elements[key]) {
-        if (
-          [
-            "sobreText",
-            "projetoDescricao",
-            "certificadosText",
-            "certDescricao",
-          ].includes(key)
-        ) {
-          elements[key].innerHTML = translations[lang][key];
-        } else {
-          elements[key].textContent = translations[lang][key];
-        }
-      }
-    }
-
-    localStorage.setItem("site-lang", lang);
-    document.documentElement.lang = lang === "en" ? "en" : "pt-br";
-
-    // Atualizar mensagem de fallback do GitHub
-    window.showGithubFallback();
-  }
-
-  btnPT.addEventListener("click", () => setLangUI("pt"));
-  btnEN.addEventListener("click", () => setLangUI("en"));
-
-  const savedLang = localStorage.getItem("site-lang") || "pt";
-  setLangUI(savedLang);
-
-  // ---------- Projetos Dinâmicos ----------
-  const projetos = [
+  const projects = [
     {
-      titulo_pt: "🥊 Landing page de academia de Boxe - IronFist",
-      descricao_pt: `Uma landing page para uma academia de boxe fictícia chamada IronFist, com um design moderno e responsivo.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> design moderno e responsivo.`,
-      titulo_en: "🥊 Boxing Gym Landing Page - IronFist",
-      descricao_en: `A landing page for a fictional boxing gym called IronFist, with a modern and responsive design.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> modern and responsive design.`,
-      imagem: "Assets/FotoBoxe.png",
+      title: {
+        pt: "🥊 IronFist",
+        en: "🥊 IronFist",
+      },
+
+      description: {
+        pt: "Landing page para uma academia de boxe fictícia, criada com foco em design moderno, organização e responsividade.",
+
+        en: "Landing page for a fictional boxing gym, focused on modern design, organization, and responsiveness.",
+      },
+
+      image: "Assets/FotoBoxe.png",
+
+      technologies: ["HTML", "CSS", "JavaScript"],
+
       online: "https://jorgedev1122.github.io/Iron-Fist/",
-      codigo: "https://github.com/jorgedev1122/Iron-Fist",
+
+      github: "https://github.com/jorgedev1122/Iron-Fist",
     },
+
     {
-      titulo_pt: "🚴 Dashboard para ciclistas - Velocity Dash",
-      descricao_pt: `Um dashboard para ciclistas, com informações sobre rotas, desempenho e mais.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> design moderno e responsivo.`,
-      titulo_en: "🚴 Cycling Dashboard - Velocity Dash",
-      descricao_en: `A dashboard for cyclists, with information about routes, performance and more.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> modern and responsive design.`,
-      imagem: "Assets/FotoVelocity.png",
+      title: {
+        pt: "🚴 Velocity Dash",
+        en: "🚴 Velocity Dash",
+      },
+
+      description: {
+        pt: "Dashboard para ciclistas com informações sobre rotas, desempenho e outros dados apresentados em uma interface moderna.",
+
+        en: "A cycling dashboard featuring route information, performance data, and other information in a modern interface.",
+      },
+
+      image: "Assets/FotoVelocity.png",
+
+      technologies: ["HTML", "CSS", "JavaScript"],
+
       online: "https://jorgedev1122.github.io/Velocity-Dash/",
-      codigo: "https://github.com/jorgedev1122/Velocity-Dash",
+
+      github: "https://github.com/jorgedev1122/Velocity-Dash",
     },
+
     {
-      titulo_pt: "🛹 Loja skatista - SK8HUB",
-      descricao_pt:
-        "loja online para público skatista, roupas, acessórios, peças e design ciano moderno.",
-      titulo_en: "🛹 Skater Store - SK8HUB",
-      descricao_en:
-        "Online store for skaters, with clothes, accessories, parts and modern cyan design.",
-      imagem: "Assets/FotoSK8HUB.png",
+      title: {
+        pt: "🛹 SK8HUB",
+        en: "🛹 SK8HUB",
+      },
+
+      description: {
+        pt: "Loja virtual voltada para o público skatista, com roupas, acessórios, peças e uma identidade visual moderna.",
+
+        en: "An online store designed for skaters, featuring clothing, accessories, parts, and a modern visual identity.",
+      },
+
+      image: "Assets/FotoSK8HUB.png",
+
+      technologies: ["HTML", "CSS", "JavaScript"],
+
       online: "https://jorgedev1122.github.io/SK8HUB/",
-      codigo: "https://github.com/jorgedev1122/SK8HUB",
+
+      github: "https://github.com/jorgedev1122/SK8HUB",
     },
+
     {
-      titulo_pt: " 🧟︻┳═一 Top view game shooter - SWARM",
-      descricao_pt:
-        "Um jogo top view shooter onde o jogador enfrente um vexame de zumbis incluindo boss, design simples porém mecânicas complexas.",
-      titulo_en: " 🧟︻┳═一 Top view shooter game - SWARM",
-      descricao_en:
-        "A top view shooter game where the player faces a swarm of zombies including a boss, with simple design but complex mechanics.",
-      imagem: "Assets/FotoSWARM.jpeg",
-      online: "https://jorgedev1122.github.io/SWARM/",
-      codigo: "https://github.com/jorgedev1122/SWARM",
-    },
-    {
-      titulo_pt: "🚚 Landing page premium (REAL) - DB-imports",
-      descricao_pt:
-        "Projeto de vitrine digital feita para a empresa de importação DB-imports, com design moderno e responsivo.",
-      titulo_en: "🚚 Premium Landing Page (REAL) - DB-imports",
-      descricao_en:
-        "Digital showcase project made for the import company DB-imports, with a modern and responsive design.",
-      imagem: "Assets/FotoDB.png",
+      title: {
+        pt: "🚚 DB-Imports",
+        en: "🚚 DB-Imports",
+      },
+
+      description: {
+        pt: "Landing page desenvolvida para uma empresa real de importação, com foco em apresentação de produtos, identidade visual e responsividade.",
+
+        en: "A landing page developed for a real import company, focused on product presentation, visual identity, and responsiveness.",
+      },
+
+      image: "Assets/FotoDB.png",
+
+      technologies: ["HTML", "CSS", "JavaScript"],
+
       online: "https://db-imports.vercel.app/",
-      codigo: "https://github.com/jorgedev1122/DB-Imports",
+
+      github: "https://github.com/jorgedev1122/DB-Imports",
     },
+
     {
-      titulo_pt: "🧮 Calculadora Modular",
-      descricao_pt: `Uma calculadora com modos científicos, financeiros e mais.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> lógica, localStorage e modularização.`,
-      titulo_en: "🧮 Modular Calculator",
-      descricao_en: `A calculator with scientific and financial modes.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> logic, localStorage and modularization.`,
-      imagem: "Assets/FotoCalcMod.png",
+      title: {
+        pt: "🧮 Calculadora Modular",
+        en: "🧮 Modular Calculator",
+      },
+
+      description: {
+        pt: "Calculadora com diferentes modos, incluindo funções científicas e financeiras, utilizando lógica, localStorage e modularização.",
+
+        en: "A calculator with multiple modes, including scientific and financial functions, using logic, localStorage, and modularization.",
+      },
+
+      image: "Assets/FotoCalcMod.png",
+
+      technologies: ["HTML", "CSS", "JavaScript"],
+
       online: "https://jorgedev1122.github.io/CalcMod/",
-      codigo: "https://github.com/jorgedev1122/CalcMod",
+
+      github: "https://github.com/jorgedev1122/CalcMod",
     },
+
     {
-      titulo_pt: "🎓 EduSpace",
-      descricao_pt: `Um espaço que une recursos, tarefas, mensagens e mais para organizar seu aprendizado na escola.<br><strong>Tecnologias:</strong> HTML + CSS + JS<br><em>Aprendizado:</em> organização de paineis.`,
-      titulo_en: "🎓 EduSpace",
-      descricao_en: `A space that brings together resources, tasks, messages and more to organize your learning at school.<br><strong>Technologies:</strong> HTML + CSS + JS<br><em>Learned:</em> panel organization.`,
-      imagem: "Assets/FotoEduspace.png",
+      title: {
+        pt: "🎓 EduSpace",
+        en: "🎓 EduSpace",
+      },
+
+      description: {
+        pt: "Uma plataforma que reúne recursos, tarefas, mensagens e outras ferramentas para organizar experiências de aprendizado.",
+
+        en: "A platform that brings together resources, tasks, messages, and other tools to organize learning experiences.",
+      },
+
+      image: "Assets/FotoEduspace.png",
+
+      technologies: ["HTML", "CSS", "JavaScript"],
+
       online: "https://jorgedev1122.github.io/Eduspace/",
-      codigo: "https://github.com/jorgedev1122/EduSpace",
+
+      github: "https://github.com/jorgedev1122/EduSpace",
     },
   ];
 
-  let projetoAtual = 0;
+  /* =========================================================
+     JOGOS
+  ========================================================== */
 
-  const titulo = document.getElementById("projeto-titulo");
-  const descricao = document.getElementById("projeto-descricao");
-  const imagem = document.getElementById("projeto-img");
-  const btnOnline2 = document.getElementById("btn-online");
-  const btnCodigo2 = document.getElementById("btn-codigo");
+  const games = [
+    {
+      title: {
+        pt: "SWARM",
+        en: "SWARM",
+      },
 
-  document.getElementById("proximo").addEventListener("click", () => {
-    projetoAtual = (projetoAtual + 1) % projetos.length;
-    atualizarProjeto();
-  });
+      description: {
+        pt: "Um top-down survival shooter onde o jogador enfrenta hordas de inimigos e diferentes desafios. O projeto explora combate, inimigos, personagens, progressão e sistemas de gameplay.",
 
-  document.getElementById("anterior").addEventListener("click", () => {
-    projetoAtual = (projetoAtual - 1 + projetos.length) % projetos.length;
-    atualizarProjeto();
-  });
+        en: "A top-down survival shooter where the player faces enemy hordes and different challenges. The project explores combat, enemies, characters, progression, and gameplay systems.",
+      },
 
-  function atualizarProjeto() {
-    const p = projetos[projetoAtual];
-    const currentLang = localStorage.getItem("site-lang") || "pt";
-    titulo.innerHTML = currentLang === "pt" ? p.titulo_pt : p.titulo_en;
-    descricao.innerHTML =
-      currentLang === "pt" ? p.descricao_pt : p.descricao_en;
-    imagem.src = p.imagem;
-    btnOnline2.href = p.online;
-    btnCodigo2.href = p.codigo;
+      image: "Assets/FotoSWARM.jpeg",
+
+      technologies: ["HTML", "CSS", "JavaScript", "Game Development"],
+
+      online: "https://jorgedev1122.github.io/SWARM/",
+
+      github: "https://github.com/jorgedev1122/SWARM",
+    },
+  ];
+
+  /* =========================================================
+     RENDER DE PROJETOS
+  ========================================================== */
+
+  function renderProjects(lang) {
+    projectsGrid.innerHTML = "";
+
+    projects.forEach((project) => {
+      const card = document.createElement("article");
+
+      card.className = "project-card reveal";
+
+      const title = project.title[lang];
+
+      const description = project.description[lang];
+
+      const tags = project.technologies
+        .map((technology) => `<span class="project-tag">${technology}</span>`)
+        .join("");
+
+      card.innerHTML = `
+
+        <div class="project-image">
+
+          <img
+            src="${project.image}"
+            alt="${title}"
+            loading="lazy"
+          />
+
+          <div class="project-overlay">
+            <span>
+              <ion-icon name="open-outline"></ion-icon>
+              ${lang === "pt" ? "Abrir projeto" : "Open project"}
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="project-content">
+
+          <h3>${title}</h3>
+
+          <p>
+            ${description}
+          </p>
+
+          <div class="project-tags">
+            ${tags}
+          </div>
+
+          <div class="project-links">
+
+            <a
+              href="${project.online}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              <ion-icon name="globe-outline"></ion-icon>
+              ${lang === "pt" ? "Ver online" : "View online"}
+            </a>
+
+            <a
+              href="${project.github}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              <i class="fa-brands fa-github"></i>
+              ${lang === "pt" ? "Código" : "Code"}
+            </a>
+
+          </div>
+
+        </div>
+
+      `;
+
+      projectsGrid.appendChild(card);
+    });
+
+    observeRevealElements();
   }
 
-  const observer = new MutationObserver(() => atualizarProjeto());
-  observer.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["lang"],
-  });
-  atualizarProjeto();
+  /* =========================================================
+     RENDER DE JOGOS
+  ========================================================== */
 
-  // ---------- Certificados Dinâmicos ----------
-  const certificados = [
+  function renderGames(lang) {
+    gamesGrid.innerHTML = "";
+
+    games.forEach((game) => {
+      const card = document.createElement("article");
+
+      card.className = "game-card reveal";
+
+      const title = game.title[lang];
+
+      const description = game.description[lang];
+
+      const tags = game.technologies
+        .map((technology) => `<span class="project-tag">${technology}</span>`)
+        .join("");
+
+      card.innerHTML = `
+
+        <div class="game-image">
+
+          <img
+            src="${game.image}"
+            alt="${title}"
+            loading="lazy"
+          />
+
+        </div>
+
+
+        <div class="game-content">
+
+          <span class="game-badge">
+            ${lang === "pt" ? "Jogo em desenvolvimento" : "Game in development"}
+          </span>
+
+          <h3>${title}</h3>
+
+          <p>
+            ${description}
+          </p>
+
+          <div class="game-tags">
+            ${tags}
+          </div>
+
+          <div class="project-links">
+
+            <a
+              href="${game.online}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="primary-button"
+            >
+              <ion-icon name="game-controller-outline"></ion-icon>
+              ${lang === "pt" ? "Jogar agora" : "Play now"}
+            </a>
+
+            <a
+              href="${game.github}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              <i class="fa-brands fa-github"></i>
+              ${lang === "pt" ? "Código" : "Code"}
+            </a>
+
+          </div>
+
+        </div>
+
+      `;
+
+      gamesGrid.appendChild(card);
+    });
+
+    observeRevealElements();
+  }
+
+  /* =========================================================
+     CERTIFICADOS
+  ========================================================== */
+
+  const certificates = [
     {
-      titulo_pt: "Discover",
-      titulo_en: "Discover Course",
-      descricao_pt:
-        "O Curso Discover da Rocketseat é uma introdução prática ao desenvolvimento web, aprendendo HTML, CSS e JS.",
-      descricao_en:
-        "The Discover Course from Rocketseat is a hands-on introduction to web development, learning HTML, CSS and JS.",
-      imagem: "Assets/Certificado.png",
+      title: {
+        pt: "Discover",
+        en: "Discover Course",
+      },
+
+      description: {
+        pt: "Curso da Rocketseat com uma introdução prática ao desenvolvimento web, abordando HTML, CSS, JavaScript e fundamentos importantes para começar na programação.",
+
+        en: "A Rocketseat course providing a hands-on introduction to web development, covering HTML, CSS, JavaScript, and important programming fundamentals.",
+      },
+
+      image: "Assets/Certificado.png",
+
       link: "https://app.rocketseat.com.br/certificates/63f04b36-f352-422b-bc8c-41be7b914158",
     },
+
     {
-      titulo_pt: "Posicionamento nas Redes Sociais",
-      titulo_en: "Social Media Positioning",
-      descricao_pt:
-        "Curso gratuito da Rocketseat sobre branding pessoal e posicionamento online para atrair oportunidades na área de tecnologia.",
-      descricao_en:
-        "Free Rocketseat course on personal branding and online positioning to attract tech opportunities.",
-      imagem: "Assets/Certificado2.png",
+      title: {
+        pt: "Posicionamento nas Redes Sociais",
+        en: "Social Media Positioning",
+      },
+
+      description: {
+        pt: "Curso da Rocketseat sobre posicionamento online e branding pessoal para construir uma presença profissional na área de tecnologia.",
+
+        en: "A Rocketseat course about online positioning and personal branding to build a professional presence in the technology field.",
+      },
+
+      image: "Assets/Certificado2.png",
+
       link: "https://app.rocketseat.com.br/certificates/e20b1bfe-1156-4170-979e-275e43f82357",
     },
+
     {
-      titulo_pt: "Desbloqueando a Programação",
-      titulo_en: "Unlocking Programming",
-      descricao_pt:
-        "Curso gratuito para iniciantes que apresenta operadores, váriaveis, estrutura de dados, loops e mais utilizando o Scratch (plataforma de programação visual utilizando blocos).",
-      descricao_en:
-        "Free beginner course that introduces operators, variables, data structures, loops and more using Scratch (a visual programming platform using blocks).",
-      imagem: "Assets/Certificado3.png",
+      title: {
+        pt: "Desbloqueando a Programação",
+        en: "Unlocking Programming",
+      },
+
+      description: {
+        pt: "Curso introdutório sobre operadores, variáveis, estruturas de dados, loops e outros conceitos utilizando Scratch.",
+
+        en: "An introductory course covering operators, variables, data structures, loops, and other programming concepts using Scratch.",
+      },
+
+      image: "Assets/Certificado3.png",
+
       link: "https://app.rocketseat.com.br/certificates/ab86655c-05aa-46fa-881b-30ed56e9c31c",
     },
   ];
 
-  let certificadoAtual = 0;
+  let currentCertificate = 0;
 
-  const certTitulo = document.getElementById("cert-titulo");
-  const certDescricao = document.getElementById("cert-descricao");
-  const certImg = document.getElementById("cert-img");
-  const btnCertLink = document.getElementById("btn-cert-link");
+  function updateCertificate(lang) {
+    const certificate = certificates[currentCertificate];
 
-  document.getElementById("proximo-cert").addEventListener("click", () => {
-    certificadoAtual = (certificadoAtual + 1) % certificados.length;
-    atualizarCertificado();
-  });
+    certImg.src = certificate.image;
 
-  document.getElementById("anterior-cert").addEventListener("click", () => {
-    certificadoAtual =
-      (certificadoAtual - 1 + certificados.length) % certificados.length;
-    atualizarCertificado();
-  });
+    certImg.alt = certificate.title[lang];
 
-  function atualizarCertificado() {
-    const c = certificados[certificadoAtual];
-    const currentLang = localStorage.getItem("site-lang") || "pt";
-    certTitulo.innerHTML = currentLang === "pt" ? c.titulo_pt : c.titulo_en;
-    certDescricao.innerHTML =
-      currentLang === "pt" ? c.descricao_pt : c.descricao_en;
-    certImg.src = c.imagem;
-    btnCertLink.href = c.link;
+    certTitulo.textContent = certificate.title[lang];
+
+    certDescricao.textContent = certificate.description[lang];
+
+    certLink.href = certificate.link;
+
+    certCount.textContent = `${String(currentCertificate + 1).padStart(2, "0")} / ${String(certificates.length).padStart(2, "0")}`;
   }
 
-  const observerCert = new MutationObserver(() => atualizarCertificado());
-  observerCert.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["lang"],
+  previousCert.addEventListener("click", () => {
+    currentCertificate =
+      currentCertificate === 0
+        ? certificates.length - 1
+        : currentCertificate - 1;
+
+    updateCertificate(getCurrentLanguage());
   });
-  atualizarCertificado();
-});
 
-const elements = document.querySelectorAll(".fade");
+  nextCert.addEventListener("click", () => {
+    currentCertificate = (currentCertificate + 1) % certificates.length;
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+    updateCertificate(getCurrentLanguage());
+  });
+
+  /* =========================================================
+     IDIOMA
+  ========================================================== */
+
+  function getCurrentLanguage() {
+    return localStorage.getItem("site-lang") || "pt";
+  }
+
+  function setLanguage(lang) {
+    const dictionary = translations[lang];
+
+    document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
+
+    document.title = dictionary.pageTitle;
+
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const key = element.dataset.i18n;
+
+      if (dictionary[key] !== undefined) {
+        element.textContent = dictionary[key];
+      }
+    });
+
+    btnPT.classList.toggle("active", lang === "pt");
+
+    btnEN.classList.toggle("active", lang === "en");
+
+    localStorage.setItem("site-lang", lang);
+
+    renderProjects(lang);
+
+    renderGames(lang);
+
+    updateCertificate(lang);
+  }
+
+  btnPT.addEventListener("click", () => setLanguage("pt"));
+
+  btnEN.addEventListener("click", () => setLanguage("en"));
+
+  /* =========================================================
+     GITHUB FALLBACK
+  ========================================================== */
+
+  let githubStatsFailed = false;
+  let githubLanguagesFailed = false;
+
+  function checkGithubFallback() {
+    if (githubStatsFailed && githubLanguagesFailed) {
+      githubFallback.style.display = "block";
     }
-  });
-});
+  }
 
-elements.forEach((el) => observer.observe(el));
+  githubStats.addEventListener("error", () => {
+    githubStats.style.display = "none";
+
+    githubStatsFailed = true;
+
+    checkGithubFallback();
+  });
+
+  githubTopLangs.addEventListener("error", () => {
+    githubTopLangs.style.display = "none";
+
+    githubLanguagesFailed = true;
+
+    checkGithubFallback();
+  });
+
+  /* =========================================================
+     SCROLL REVEAL
+  ========================================================== */
+
+  function observeRevealElements() {
+    const elements = document.querySelectorAll(".reveal:not(.visible)");
+
+    const observer = new IntersectionObserver(
+      (entries, observerInstance) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+
+            observerInstance.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.08,
+      },
+    );
+
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+  }
+
+  /* =========================================================
+     INICIALIZAÇÃO
+  ========================================================== */
+
+  setLanguage(getCurrentLanguage());
+
+  observeRevealElements();
+});
