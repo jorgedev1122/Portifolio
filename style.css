@@ -1083,10 +1083,10 @@ body.light .code-card {
   margin-bottom: 18px;
   padding: 6px 9px;
 
-  border: 1px solid rgba(139, 92, 246, 0.35);
+  border: 1px solid rgba(247, 248, 248, 0.839);
   border-radius: 7px;
 
-  background: var(--glow);
+  
 
   color: var(--primary-light);
 

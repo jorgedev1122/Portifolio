@@ -471,8 +471,28 @@ My goal is to constantly grow as a developer, build useful solutions, and turn m
 
       github: "https://github.com/jorgedev1122/SWARM",
     },
-  ];
+    {
+      title: {
+        pt: "Fireball Frenzy",
+        en: "Fireball Frenzy",
+      },
+      
+      description: {
+        pt: "Jogo de plataforma 2D de queimada, o jogador enfrenta mais 4 bots e cada um tem seus pontos fortes. O projeto explora física, colisões, animações, inteligência artificial e sistemas de gameplay.",
 
+        en: "2D dodgeball platformer game, where the player faces 4 bots, each with their own strengths. The project explores physics, collisions, animations, artificial intelligence, and gameplay systems.",
+      },
+
+      image: "Assets/FotoFireball.png",
+
+      technologies: ["HTML", "CSS", "JavaScript", "Python", "Game Development"],
+
+      online: "https://jorgedev1122.github.io/Fireball-Frenzy/",
+       
+      github: "https://github.com/jorgedev1122/Fireball-Frenzy",
+    },
+  ]  
+    
   /* =========================================================
      RENDER DE PROJETOS
   ========================================================== */
@@ -595,7 +615,7 @@ My goal is to constantly grow as a developer, build useful solutions, and turn m
         <div class="game-content">
 
           <span class="game-badge">
-            ${lang === "pt" ? "Jogo em desenvolvimento" : "Game in development"}
+            ${lang === "pt" ? "Jogo finalizado" : "Game completed"}           
           </span>
 
           <h3>${title}</h3>
