@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const projectsGrid = document.getElementById("projects-grid");
   const gamesGrid = document.getElementById("games-grid");
+  const scriptsGrid = document.getElementById("scripts-grid");
 
   const certImg = document.getElementById("cert-img");
   const certTitulo = document.getElementById("cert-titulo");
@@ -106,6 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       navGames: "Jogos",
 
+      navScripts: "Scripts",
+
       navTech: "Tecnologias",
 
       navContact: "Contato",
@@ -159,6 +162,42 @@ Meu objetivo é evoluir constantemente como desenvolvedor, criar soluções úte
 
       gamesDescription:
         "Jogos e experiências interativas que desenvolvo para explorar lógica, programação e criação de sistemas.",
+
+      scriptsLabel: "Automação e experimentos",
+
+      scriptsHeading: "🤖 Scripts",
+
+      scriptsDescription:
+        "Experimentos com automação de navegadores, coleta de dados e medição de desempenho.",
+
+      scriptInDevelopment: "Projeto experimental",
+
+      scriptDescription:
+        "Bot de digitação desenvolvido em Python com Selenium para estudar automação de navegadores, manipulação de páginas web e velocidade de digitação.",
+
+      scriptObjective: "Objetivo",
+
+      scriptObjectiveText:
+        "Extrair palavras do Monkeytype, montar uma frase e reproduzi-la caractere por caractere em um laboratório local controlado.",
+
+      scriptFlow: "Fluxo do projeto",
+
+      scriptFlowText:
+        "Monkeytype → Selenium → coleta de palavras → laboratório local → digitação → resultados",
+
+      scriptResults: "Métricas",
+
+      scriptWpm: "Palavras por minuto",
+
+      scriptAccuracy: "Precisão de digitação do bot",
+
+      scriptErrors: "Erros de digitação do bot",
+
+      scriptTime: "Timer restante para digitação do bot",
+
+      scriptCode: "Trecho de extração",
+
+      scriptViewCode: "Ver código no GitHub",
 
       techLabel: "O que utilizo",
 
@@ -214,6 +253,8 @@ Meu objetivo é evoluir constantemente como desenvolvedor, criar soluções úte
 
       navGames: "Games",
 
+      navScripts: "Scripts",
+
       navTech: "Technologies",
 
       navContact: "Contact",
@@ -267,6 +308,42 @@ My goal is to constantly grow as a developer, build useful solutions, and turn m
 
       gamesDescription:
         "Games and interactive experiences I build to explore logic, programming, and system design.",
+
+      scriptsLabel: "Automation and experiments",
+
+      scriptsHeading: "🤖 Scripts",
+
+      scriptsDescription:
+        "Experiments with browser automation, data collection, and performance measurement.",
+
+      scriptInDevelopment: "Experimental project",
+
+      scriptDescription:
+        "A typing bot built with Python and Selenium to study browser automation, web page manipulation, and typing speed.",
+
+      scriptObjective: "Objective",
+
+      scriptObjectiveText:
+        "Extract words from Monkeytype, build a sentence, and reproduce it character by character in a controlled local laboratory.",
+
+      scriptFlow: "Project flow",
+
+      scriptFlowText:
+        "Monkeytype → Selenium → word collection → local laboratory → typing → results",
+
+      scriptResults: "Metrics",
+
+      scriptWpm: "WPM",
+
+      scriptAccuracy: "Accuracy",
+
+      scriptErrors: "Errors",
+
+      scriptTime: "Time",
+
+      scriptCode: "Extraction snippet",
+
+      scriptViewCode: "View code on GitHub",
 
       techLabel: "What I use",
 
@@ -476,7 +553,7 @@ My goal is to constantly grow as a developer, build useful solutions, and turn m
         pt: "Fireball Frenzy",
         en: "Fireball Frenzy",
       },
-      
+
       description: {
         pt: "Jogo de plataforma 2D de queimada, o jogador enfrenta mais 4 bots e cada um tem seus pontos fortes. O projeto explora física, colisões, animações, inteligência artificial e sistemas de gameplay.",
 
@@ -488,11 +565,11 @@ My goal is to constantly grow as a developer, build useful solutions, and turn m
       technologies: ["HTML", "CSS", "JavaScript", "Python", "Game Development"],
 
       online: "https://jorgedev1122.github.io/Fireball-Frenzy/",
-       
+
       github: "https://github.com/jorgedev1122/Fireball-Frenzy",
     },
-  ]  
-    
+  ];
+
   /* =========================================================
      RENDER DE PROJETOS
   ========================================================== */
@@ -663,6 +740,110 @@ My goal is to constantly grow as a developer, build useful solutions, and turn m
   }
 
   /* =========================================================
+     SCRIPTS
+  ========================================================== */
+
+  const scripts = [
+    {
+      title: {
+        pt: "Monkeytype Typing Bot",
+        en: "Monkeytype Typing Bot",
+      },
+
+      image: "./Assets/FotoTypingBot.png",
+
+      technologies: ["Python", "Selenium", "HTML", "CSS", "Chrome"],
+
+      github: "https://github.com/jorgedev1122/TypingBot.Script",
+    },
+  ];
+
+  function renderScripts(lang) {
+    scriptsGrid.innerHTML = "";
+
+    scripts.forEach((script) => {
+      const card = document.createElement("article");
+
+      card.className = "script-card reveal";
+
+      const tags = script.technologies
+        .map((technology) => `<span class="project-tag">${technology}</span>`)
+        .join("");
+
+      card.innerHTML = `
+        <div class="script-media">
+          <img
+            src="${script.image}"
+            alt="${script.title[lang]}"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          />
+
+          <div class="script-media-fallback">
+            <ion-icon name="terminal-outline"></ion-icon>
+            <span>Python + Selenium</span>
+          </div>
+        </div>
+
+        <div class="script-content">
+          <span class="script-badge">
+            ${translations[lang].scriptInDevelopment}
+          </span>
+
+          <h3>${script.title[lang]}</h3>
+
+          <p>${translations[lang].scriptDescription}</p>
+
+          <div class="script-detail">
+            <strong>${translations[lang].scriptObjective}</strong>
+            <p>${translations[lang].scriptObjectiveText}</p>
+          </div>
+
+          <div class="script-flow">
+            <strong>${translations[lang].scriptFlow}</strong>
+            <span>${translations[lang].scriptFlowText}</span>
+          </div>
+
+          <div class="project-tags">
+            ${tags}
+          </div>
+
+          <div class="script-results">
+            <strong>${translations[lang].scriptResults}</strong>
+            <div class="script-metrics">
+              <span><b>WPM</b>${translations[lang].scriptWpm}</span>
+              <span><b>PRECISÃO</b>${translations[lang].scriptAccuracy}</span>
+              <span><b>ERROS</b>${translations[lang].scriptErrors}</span>
+              <span><b>TEMPO</b>${translations[lang].scriptTime}</span>
+            </div>
+          </div>
+
+          <div class="script-code">
+            <strong>${translations[lang].scriptCode}</strong>
+            <pre><code>elementos = driver.find_elements(
+    By.CSS_SELECTOR, "#words .word"
+)</code></pre>
+          </div>
+
+          <a
+            href="${script.github}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="primary-button script-button"
+          >
+            <i class="fa-brands fa-github"></i>
+            ${translations[lang].scriptViewCode}
+          </a>
+        </div>
+      `;
+
+      scriptsGrid.appendChild(card);
+    });
+
+    observeRevealElements();
+  }
+
+  /* =========================================================
      CERTIFICADOS
   ========================================================== */
 
@@ -716,6 +897,20 @@ My goal is to constantly grow as a developer, build useful solutions, and turn m
       image: "Assets/Certificado3.png",
 
       link: "https://app.rocketseat.com.br/certificates/ab86655c-05aa-46fa-881b-30ed56e9c31c",
+    },
+
+    {
+      title: {
+        pt: "Lógica de Programação - Python",
+        en: "Programming Logic - Python",
+      },
+      description: {
+        pt: "Curso sobre lógica de programação utilizando a linguagem Python.",
+        en: "A course on programming logic using the Python language.",
+      },
+      image: "Assets/Certificado4.png",
+
+      link: "https://www.rocketseat.com.br/referral/one?referral=jjorge-enrique&utm_source=platform&utm_medium=organic&utm_campaign=venda&utm_term=mgm&utm_content=indication-lp_one-certificate-modal&coupon=indicamgm",
     },
   ];
 
@@ -784,6 +979,8 @@ My goal is to constantly grow as a developer, build useful solutions, and turn m
     renderProjects(lang);
 
     renderGames(lang);
+
+    renderScripts(lang);
 
     updateCertificate(lang);
   }

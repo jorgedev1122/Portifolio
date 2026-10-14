@@ -6,12 +6,9 @@
   --bg: #07080b;
   --bg-secondary: #0c0e13;
   --surface: #101218;
-  --surface-hover: #151821;
-
   --text: #f5f7fa;
   --text-secondary: #9ca3af;
   --text-muted: #626a78;
-
   --primary: #8b5cf6;
   --primary-light: #a78bfa;
   --primary-dark: #6d28d9;
@@ -30,10 +27,304 @@
   font-synthesis: none;
 }
 
+/*
+  Project card styles are defined near the other section styles below.
+  .script-media {
+    position: relative;
+    min-height: 610px;
+    overflow: hidden;
+    background: var(--bg-secondary);
+  }
 
-/* =========================================================
-   LIGHT THEME
-========================================================= */
+  .script-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 50%, var(--surface) 100%);
+    pointer-events: none;
+  }
+
+  .script-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .script-card:hover .script-media img {
+    transform: scale(1.04);
+  }
+
+  .script-media-fallback {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+    align-content: center;
+    gap: 12px;
+      radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.16), transparent 42%),
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .script-media-fallback ion-icon {
+    color: var(--primary);
+    font-size: 68px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  --radius: 18px;
+  --radius-small: 12px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 42px;
+  --header-height: 76px;
+
+    box-shadow: 0 25px 60px var(--shadow);
+    width: fit-content;
+  font-synthesis: none;
+    margin-bottom: 14px;
+    padding: 6px 9px;
+    border: 1px solid var(--border-hover);
+    border-radius: 7px;
+  .script-media {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: var(--bg-secondary);
+  }
+
+  .script-media::after {
+    margin-bottom: 12px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.05;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 50%, var(--surface) 100%);
+  .script-content > p {
+    margin-bottom: 22px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .script-detail,
+  .script-flow,
+  .script-results,
+  .script-code {
+    margin-bottom: 19px;
+  }
+
+  .script-detail strong,
+  .script-flow strong,
+  .script-results > strong,
+  .script-code > strong {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .script-detail p,
+  .script-flow span {
+    color: var(--text-secondary);
+  .script-media img {
+    width: 100%;
+    height: 100%;
+
+  .script-flow span {
+    display: block;
+    padding: 10px 12px;
+    border-left: 2px solid var(--primary);
+    background: var(--bg-secondary);
+    color: var(--primary-light);
+    font-size: 11px;
+  }
+
+  .script-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .script-metrics span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 9px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-size: 9px;
+    text-transform: uppercase;
+  }
+
+  .script-metrics b {
+    color: var(--primary-light);
+    font-size: 15px;
+  }
+
+  .script-code pre {
+    margin: 0;
+    padding: 12px;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text-secondary);
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .script-button {
+    align-self: flex-start;
+    margin-top: 3px;
+  }
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .script-card:hover .script-media img {
+    transform: scale(1.04);
+  }
+
+  .script-media-fallback {
+    position: absolute;
+    inset: 0;
+  Project card styles moved below.
+    align-content: center;
+    gap: 12px;
+    color: var(--primary-light);
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .script-media-fallback ion-icon {
+    color: var(--primary);
+    font-size: 68px;
+  }
+
+  .script-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 42px;
+  }
+
+  .script-badge {
+    width: fit-content;
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 9px;
+    border: 1px solid var(--border-hover);
+    border-radius: 7px;
+    color: var(--primary-light);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .script-content h3 {
+    margin-bottom: 12px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.05;
+  }
+
+  .script-content > p {
+    margin-bottom: 22px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .script-detail,
+  .script-flow,
+  .script-results,
+  .script-code {
+    margin-bottom: 19px;
+  }
+
+  .script-detail strong,
+  .script-flow strong,
+  .script-results > strong,
+  .script-code > strong {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .script-detail p,
+  .script-flow span {
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .script-flow span {
+    display: block;
+    padding: 10px 12px;
+    border-left: 2px solid var(--primary);
+    background: var(--bg-secondary);
+    color: var(--primary-light);
+    font-size: 11px;
+  }
+
+  .script-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .script-metrics span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 9px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-size: 9px;
+    text-transform: uppercase;
+  }
+
+  .script-metrics b {
+    color: var(--primary-light);
+    font-size: 15px;
+  }
+
+  .script-code pre {
+    margin: 0;
+    padding: 12px;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text-secondary);
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .script-button {
+    align-self: flex-start;
+    margin-top: 3px;
+  }
+
+  .script-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--primary);
+*/
 
 body.light {
   --bg: #f5f6f8;
@@ -51,11 +342,6 @@ body.light {
   --shadow: rgba(0, 0, 0, 0.08);
   --glow: rgba(139, 92, 246, 0.12);
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 * {
   margin: 0;
@@ -85,13 +371,7 @@ body {
 
   color: var(--text);
 
-  font-family:
-    Inter,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   line-height: 1.6;
 
@@ -112,23 +392,12 @@ body::before {
   opacity: 0.025;
 
   background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.4) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.4) 1px,
-      transparent 1px
-    );
+    linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
 
   background-size: 50px 50px;
 
-  mask-image: linear-gradient(
-    to bottom,
-    black,
-    transparent 80%
-  );
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
 
   z-index: -1;
 }
@@ -146,7 +415,6 @@ img {
   display: block;
   max-width: 100%;
 }
-
 
 /* =========================================================
    HEADER
@@ -182,7 +450,6 @@ img {
 body.light .header {
   background: rgba(245, 246, 248, 0.82);
 }
-
 
 /* LOGO */
 
@@ -223,7 +490,6 @@ body.light .header {
 .footer-logo strong span {
   color: var(--primary-light);
 }
-
 
 /* NAV */
 
@@ -268,7 +534,6 @@ body.light .header {
 .nav a:hover::after {
   width: 100%;
 }
-
 
 /* HEADER ACTIONS */
 
@@ -353,7 +618,6 @@ body.light .header {
   display: none;
 }
 
-
 /* =========================================================
    MAIN / SECTIONS
 ========================================================= */
@@ -416,7 +680,6 @@ main {
 
   font-size: 16px;
 }
-
 
 /* =========================================================
    HERO
@@ -602,7 +865,6 @@ main {
   font-weight: 700;
 }
 
-
 /* HERO CODE CARD */
 
 .hero-decoration {
@@ -688,11 +950,7 @@ body.light .code-card {
 
   color: #d1d5db;
 
-  font-family:
-    "Cascadia Code",
-    "Fira Code",
-    Consolas,
-    monospace;
+  font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
 
   font-size: 13px;
 
@@ -710,7 +968,6 @@ body.light .code-card {
 .code-blue {
   color: #93c5fd;
 }
-
 
 /* =========================================================
    ABOUT
@@ -830,7 +1087,6 @@ body.light .code-card {
   line-height: 1.5;
 }
 
-
 /* =========================================================
    PROJECTS
 ========================================================= */
@@ -869,7 +1125,6 @@ body.light .code-card {
 
 .project-image {
   position: relative;
-
 
   overflow: hidden;
 
@@ -997,7 +1252,6 @@ body.light .code-card {
   color: white;
 }
 
-
 /* =========================================================
    GAMES
 ========================================================= */
@@ -1045,12 +1299,7 @@ body.light .code-card {
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent 55%,
-      var(--surface) 100%
-    );
+  background: linear-gradient(90deg, transparent 55%, var(--surface) 100%);
 }
 
 .game-image img {
@@ -1085,8 +1334,6 @@ body.light .code-card {
 
   border: 1px solid rgba(247, 248, 248, 0.839);
   border-radius: 7px;
-
-  
 
   color: var(--primary-light);
 
@@ -1125,7 +1372,6 @@ body.light .code-card {
 
   margin-bottom: 25px;
 }
-
 
 /* =========================================================
    TECHNOLOGIES
@@ -1274,7 +1520,6 @@ body.light .code-card {
   font-size: 11px;
 }
 
-
 /* =========================================================
    CERTIFICATES
 ========================================================= */
@@ -1385,7 +1630,6 @@ body.light .code-card {
   color: white;
 }
 
-
 /* =========================================================
    GITHUB
 ========================================================= */
@@ -1481,7 +1725,6 @@ body.light .code-card {
 
   font-size: 13px;
 }
-
 
 /* =========================================================
    CONTACT
@@ -1614,7 +1857,6 @@ body.light .code-card {
   transform: translateY(-3px);
 }
 
-
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -1652,7 +1894,6 @@ footer > span {
   opacity: 0.7;
 }
 
-
 /* =========================================================
    ANIMATIONS
 ========================================================= */
@@ -1686,13 +1927,11 @@ footer > span {
   }
 }
 
-
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
 @media (max-width: 900px) {
-
   .nav {
     gap: 17px;
   }
@@ -1724,12 +1963,7 @@ footer > span {
   }
 
   .game-image::after {
-    background:
-      linear-gradient(
-        0deg,
-        var(--surface) 0%,
-        transparent 45%
-      );
+    background: linear-gradient(0deg, var(--surface) 0%, transparent 45%);
   }
 
   .certificate-layout {
@@ -1739,12 +1973,9 @@ footer > span {
   .certificate-image-wrapper {
     min-height: auto;
   }
-
 }
 
-
 @media (max-width: 700px) {
-
   .header {
     width: calc(100% - 24px);
 
@@ -1846,6 +2077,26 @@ footer > span {
     grid-template-columns: 1fr;
   }
 
+  .scripts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .script-card {
+    grid-template-columns: 1fr;
+  }
+
+  .script-media {
+    min-height: 250px;
+  }
+
+  .script-media::after {
+    background: linear-gradient(0deg, var(--surface), transparent 55%);
+  }
+
+  .script-content {
+    padding: 30px 25px;
+  }
+
   .tech-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1880,12 +2131,9 @@ footer > span {
 
     text-align: center;
   }
-
 }
 
-
 @media (max-width: 430px) {
-
   .header-actions {
     gap: 5px;
   }
@@ -1923,5 +2171,205 @@ footer > span {
 
     font-size: 11px;
   }
+}
 
+/* =========================================================
+   SCRIPTS
+========================================================= */
+
+.scripts-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+
+.script-card {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      circle at 85% 0%,
+      rgba(139, 92, 246, 0.16),
+      transparent 38%
+    ),
+    var(--surface);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.script-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 25px 60px var(--shadow);
+}
+
+.script-media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: clamp(220px, 32vw, 360px);
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.script-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, var(--surface) 100%);
+  pointer-events: none;
+}
+
+.script-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.script-card:hover .script-media img {
+  transform: scale(1.03);
+}
+
+.script-media-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  color: var(--primary-light);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.script-media-fallback ion-icon {
+  color: var(--primary);
+  font-size: 58px;
+}
+
+.script-content {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 38px 38px;
+}
+
+.script-badge {
+  width: fit-content;
+  margin-bottom: 12px;
+  padding: 6px 9px;
+  border: 1px solid var(--border-hover);
+  border-radius: 7px;
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.script-content h3 {
+  margin-bottom: 10px;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.05;
+}
+
+.script-content > p {
+  margin-bottom: 22px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.script-detail,
+.script-flow,
+.script-results,
+.script-code {
+  margin-bottom: 18px;
+}
+
+.script-detail strong,
+.script-flow strong,
+.script-results > strong,
+.script-code > strong {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--text);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.script-detail p,
+.script-flow span {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.script-flow span {
+  display: block;
+  padding: 10px 12px;
+  border-left: 2px solid var(--primary);
+  background: var(--bg-secondary);
+  color: var(--primary-light);
+  font-size: 11px;
+}
+
+.script-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.script-metrics span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 9px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.script-metrics b {
+  color: var(--primary-light);
+  font-size: 15px;
+}
+
+.script-code pre {
+  margin: 0;
+  padding: 12px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-secondary);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.script-button {
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+  .script-media {
+    height: 220px;
+  }
+
+  .script-content {
+    padding: 26px 20px 28px;
+  }
+
+  .script-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
